@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHu.BaoXian.ArtificialCommon.Selenium</name>
+    </assembly>
+    <members>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.CommonWb.CleanTempFiles(System.String)">
+            <summary> 
+            删除临时文件
+            </summary>
+            <param name="name">完整或缺省的文件名称</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.CommonWb.GetCookie(System.String)">
+            <summary>
+            获取完整cookie
+            </summary>
+            <param name="url">当前处于登录状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.CommonWb.DownloadBitmap(System.String,System.Int32,System.String)">
+            <summary>
+            下载图片
+            超时间单位:秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.FormHelper.HideTabAltMenu(System.IntPtr)">
+            <summary>
+            设置在Alt+tab键中不显示
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.IProcessBase.Begin">
+            <summary>
+            开始执行
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.IProcessBase.End">
+            <summary>
+            结束执行,还必须调用父类的End()方法
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.Selenium.MonitorConfig">
+            <summary>
+            监测文件变化
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MonitorConfig.Monitor(System.String,System.String[])">
+            <summary>
+            监测config配置文件变化
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.SetPageLoadTimeout(System.Int32)">
+            <summary>
+            设置页面加载超时时间(在GoToUrl之前)
+            否者抛出异常
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.SetScriptTimeout(System.Int32)">
+            <summary>
+            设置js执行超时时间(在js执行之前)
+            否者抛出异常
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.WaitForElement(System.String,System.Int32)">
+            <summary>
+            等待预期条件得到满足,立即返回
+            否者抛出异常
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GoToUrl(System.String)">
+            <summary>
+            在当前浏览器中加载一个新的web页面
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GetUrl">
+            <summary>
+            获取当前浏览器窗口的url
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GetPageTitle">
+            <summary>
+            获取当前浏览器窗口的页面标题
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.SetPageTitle(System.String)">
+            <summary>
+            主要用于区别是否为程序打开的
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GetAllCookies">
+            <summary>
+            获取当前页面中定义的所有cookie
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GetAllCookiesList">
+            <summary>
+            获取当前页面中定义的所有cookie
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.DeleteAllCookies">
+            <summary>
+            删除页面上的所有cookie
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GoToWindow(System.String,System.Boolean,System.Int32)">
+            <summary>
+            将焦点设置为具有指定标题的浏览器窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GoToDefaultFrame">
+            <summary>
+            切换到框架后切换到默认设置
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.GetAlertString(System.Int32)">
+            <summary>
+            得到alert的文本
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.AlertAccept(System.Int32)">
+            <summary>
+            alert点击确定
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.AlertDismiss(System.Int32)">
+            <summary>
+            alert点击取消
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.PageScrollTop">
+            <summary>
+            将垂直滚动条移动到页面顶部
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.PageScrollBottom">
+            <summary>
+            将垂直滚动条移动到页面底部
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.FindElementById(System.String)">
+            <summary>
+            查找指定id的元素
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.FindElementByName(System.String)">
+            <summary>
+            查找指定名称的元素
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.FindElementByXPath(System.String)">
+            <summary>
+            通过xpath查找元素
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.ExecuteJS(System.String,System.Object[])">
+            <summary>
+            执行javascript
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.SelectUsage(OpenQA.Selenium.IWebElement,System.String)">
+            <summary>
+            选择下拉框
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.MoveByOffset(System.Int32,System.Int32)">
+            <summary>
+            将鼠标移到最后已知的鼠标坐标的指定偏移量
+            (模拟光标晃动)
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.MoveToElement(OpenQA.Selenium.IWebElement)">
+            <summary>
+            将鼠标移动到指定的元素
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.SaveScreenshot(System.String,OpenQA.Selenium.ScreenshotImageFormat)">
+            <summary>
+            保存屏幕截图
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.Close">
+            <summary>
+            关闭当前窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MyWebDriver.Shutdown">
+            <summary>
+            退出驱动,关闭所有与它相关的窗口
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase">
+            <summary>
+            每个操作流程会使用一个新的
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._form">
+            <summary>
+            需要交互的页面
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._paramModel">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._isQuit">
+            <summary>
+            标识是否已经退出此操作
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._isCloseForm">
+            <summary>
+            标记是否在结束时关闭此窗口
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._isShutdown">
+            <summary>
+            标记是否在结束时关闭程序
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._tryTimesDefault">
+            <summary>
+            尝试重新进入的默认次数
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase._sb">
+            <summary>
+            用于记录操作日志
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase.SetResult(System.String)">
+            <summary>
+            设置返回结果,即执行结束
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase.RecordLog(System.String,System.Object[])">
+            <summary>
+            显示并记录操作信息
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase.End(BiHu.BaoXian.ClassCommon.Selenium.Log4NetHelp2,System.Boolean)">
+            <summary>
+            结束时必须调用
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.ProcessBase.YouCanTryAgain(System.Exception)">
+            <summary>
+            一些异常可以重试,默认3次
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.#ctor(System.Int32,System.Int32)">
+            <summary>
+            创建一个定时器对象。
+            </summary>
+            <param name="times">指示定时时间，以毫秒为单位。</param>
+            <param name="intervalTimes">指示定时之中的间歇时间，用于检查是否取消执行。</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.Start(System.Object)">
+            <summary>
+            启动定时器，如果定时器已经启动，则引发异常。
+            </summary>
+            <param name="param">在定时完成时可能被使用到的传递对象。</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.Stop(System.Boolean)">
+            <summary>
+            请求中止执行，如果定时器尚未启动，则引发异常。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.Times">
+            <summary>
+            指示定时时间，以毫秒为单位。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.IntervalTimes">
+            <summary>
+            指示定时之中的间歇时间，用于检查是否取消执行。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.Excuting">
+            <summary>
+            指示定时器是否处于运行状态
+            </summary>
+        </member>
+        <member name="E:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.ExcuteCompleted">
+            <summary>
+            达到定时事件
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.Selenium.TimerHelp.ExcuteCompletedAgency">
+            <summary>
+            达到定时事件代理
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm._process">
+            <summary>
+            处理程序,每次须重新创建
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm._assistActions">
+            <summary>
+            需要辅助方法执行的代码
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.IsWorking">
+            <summary>
+            标记是否正在使用
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.LastUsedTime">
+            <summary>
+            上一次使用完的时间(时间戳)
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.StartAssist">
+            <summary>
+            辅助方法,当需要借助主线程进行某种操作时
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.AddAssistAction(System.Action)">
+            <summary>
+            增加方法到辅助方法中进行执行
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.SetActionType(BiHu.BaoXian.ClassCommon.Selenium.ArtificialParamModel)">
+            <summary>
+            设置操作类型,也即设置处理事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.Quit">
+            <summary>
+            执行完成之后的退出
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.MyDriver">
+            <summary>
+            浏览器执行驱动
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm.Result">
+            <summary>
+            执行事件完成后返回的结果,未完成时为null
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.IsShutdown">
+            <summary>
+            标记是否关闭程序
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.MonitorDriver">
+            <summary>
+            浏览器的一些处理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.StartLoginMonitor">
+            <summary>
+            开启登录监测
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.StartListen">
+            <summary>
+            开启监听调用
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.ExcuteAndResult(BiHu.BaoXian.ClassCommon.Selenium.ArtificialResultModel,BiHu.BaoXian.ArtificialCommon.Selenium.DriverForm,System.String,BiHu.BaoXian.ClassCommon.Selenium.ArtificialParamModel)">
+            <summary>
+            设置执行并返回结果
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.MonitorStopExcute(System.String)">
+            <summary>
+            中断请求的监视
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.btn_test_Click(System.Object,System.EventArgs)">
+            <summary>
+            打开调试窗口,一定是显示状态下
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.CreateExcuteForm">
+            <summary>
+            得到一个在线程中的处理窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.ExcuteRecord(System.String)">
+            <summary>
+            显示执行时会造成程序无法响应,隐藏时没有问题
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.IsShowForm">
+            <summary>
+            显示还是隐藏窗口
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.TryLoginTime">
+            <summary>
+            每个实例维持登录的时间间隔
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.LoadCount">
+            <summary>
+            初始化启动实例数
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.MaxCount">
+            <summary>
+            最大实例数
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.Selenium.MainForm.Port">
+            <summary>
+            端口号
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+    <job>
+      <name>DefeatAnalysisJob</name>
+      <group>StatisticalModule</group>
+      <description>DefeatAnalysis job for Quartz Server</description>
+      <job-type>StatisticalModuleJobs.DefeatAnalysisJob, StatisticalModuleJobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>DefeatAnalysisJobTrigger</name>
+        <group>StatisticalModule</group>
+        <job-name>DefeatAnalysisJob</job-name>
+        <job-group>StatisticalModule</job-group>
+        <!--开始执行时间-->
+        <start-time>2017-06-13T15:22:00+08:00</start-time>
+        <!--每小时准点执行一次-->
+        <cron-expression>0 0 0-23 * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <job>
+      <name>BusinessStatisticsJob</name>
+      <group>StatisticalModule</group>
+      <description>BusinessStatisticsJob for Quartz Server</description>
+      <job-type>StatisticalModuleJobs.BusinessStatisticsJob, StatisticalModuleJobs</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>BusinessStatisticsJobTrigger</name>
+        <group>StatisticalModule</group>
+        <job-name>BusinessStatisticsJob</job-name>
+        <job-group>StatisticalModule</job-group>
+        <!--开始执行时间-->
+        <start-time>2017-06-13T15:22:00+08:00</start-time>
+        <!--每小时准0 0 0-23 * * ?点执行一次-->
+        <cron-expression>0 30 2 * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

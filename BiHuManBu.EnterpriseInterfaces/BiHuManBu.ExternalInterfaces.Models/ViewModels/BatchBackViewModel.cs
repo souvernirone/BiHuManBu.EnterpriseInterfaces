@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BiHuManBu.ExternalInterfaces.Models.ViewModels
+{
+    public class BatchBackViewModel:BaseViewModel
+    {
+        /// <summary>
+        /// 撤销失败数量
+        /// </summary>
+        public int FailCount { get; set; }
+    }
+}

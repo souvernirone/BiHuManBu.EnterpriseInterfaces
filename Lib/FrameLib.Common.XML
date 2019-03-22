@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FrameLib.Common</name>
+    </assembly>
+    <members>
+        <member name="T:FrameLib.Common.ArithmeticHelper">
+            <summary>
+            算法帮助类
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.ArithmeticHelper.BinarySearchForList``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0,System.Func{``0,``0,System.Boolean},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            二分查找
+            </summary>
+            <param name="list">有序集合List</param>
+            <param name="low">开始索引 0</param>
+            <param name="high">结束索引 </param>
+            <param name="key">要查找的对象</param>
+            <param name="comparatorBefore">比较器,参数1等于参数2则返回true</param>
+            <param name="comparatorAfter">比较器,参数1大于参数2则返回true</param>
+            <returns>返回查找到的索引,没有则返回-1.注意:它并不一定是第一个,而是二分查找算法下的第一个</returns>
+        </member>
+        <member name="M:FrameLib.Common.ArithmeticHelper.QuickSort``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Func{``0,``0,System.Boolean},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            快速排序算法
+            </summary>
+            <param name="arrayList">集合</param>
+            <param name="low">开始索引 0</param>
+            <param name="high">结束索引</param>
+            <param name="comparatorBefore">比较器,参数1大于等于参数2则返回true</param>
+            <param name="comparatorAfter">比较器,参数1小于等于参数2则返回true</param>
+        </member>
+        <member name="M:FrameLib.Common.ArithmeticHelper.SortUnit``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Func{``0,``0,System.Boolean},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            一次排序单元，完成此方法，key左边都比key小，key右边都比key大。
+            array排序数组,low排序起始位置,high排序结束位置，return单元排序后的数组
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.ArithmeticHelper.FindString_Regex(System.String,System.String)">
+            <summary>
+            查找是否存在子字符串，正则方式
+            注：常用的高效方式
+            </summary>
+            <param name="operateStr">源字符串</param>
+            <param name="findStr">子字符串</param>
+            <returns>子字符串位置，-1表示未找到</returns>
+        </member>
+        <member name="T:FrameLib.Common.EnumerableExtent">
+            <summary>
+            集合的扩展方法
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.EnumerableExtent.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            此扩展方法用于集合中相同元素的去重（比group by的方式效率高出约3倍）
+            使用方式：carMainSeriesList = carMainSeriesList.DistinctBy(m => new { m.ManufacturerID, m.MainSeriesName }).ToList();
+            </summary>
+            <typeparam name="TSource">对象元素</typeparam>
+            <typeparam name="TKey">筛选项</typeparam>
+            <param name="source">只能集合可以调用</param>
+            <param name="keySelector">筛选的表达式</param>
+            <returns>去重之后的集合</returns>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.ReadAllText(System.String)">
+            <summary>
+            读取文件内容,小文件
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.ReadVersion(System.String,System.String)">
+            <summary>
+            读取版本号
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.SaveVersion(System.String,System.String,System.String)">
+            <summary>
+            保存版本号
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.GetFile(System.String)">
+            <summary>
+            读取文件
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.SaveFile(System.String,System.Byte[])">
+            <summary>
+            保存到文件
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.Execute(System.String,System.Int32)">
+            <summary>  
+            执行DOS命令，返回DOS命令的输出  
+            </summary>  
+            <param name="dosCommand">dos命令</param>  
+            <param name="milliseconds">等待命令执行的时间,0为无限等待</param>  
+            <returns>返回DOS命令的输出</returns>  
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.GetAll(System.Collections.ArrayList,System.IO.DirectoryInfo,System.String)">
+            <summary>
+            搜索文件夹中的文件
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.FileHelper.CopyDir(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>  
+            复制文件夹中的所有文件夹与文件到另一个文件夹
+            </summary>  
+            <param name="sourcePath">源文件夹</param>
+            <param name="destPath">目标文件夹</param>
+            <param name="notCopy">不用复制的文件列表</param>
+        </member>
+        <member name="M:FrameLib.Common.ReflectCreate`1.GetObjectByInterface(System.String,System.String)">
+            <summary>
+            得到接口的实现类实例
+            </summary>
+            <param name="assemblyPath">相对路径</param>
+            <param name="classNamespace">命名空间.接口名</param>
+            <returns></returns>
+        </member>
+        <member name="M:FrameLib.Common.ReflectCreate`1.GetObjectsByDir(System.String,System.String)">
+            <summary>
+            得到接口的不同实现类的实例列表
+            </summary>
+            <param name="dirPath">目录相对路径</param>
+            <param name="interfaceNamespace">命名空间.接口名</param>
+            <returns></returns>
+        </member>
+        <member name="M:FrameLib.Common.ReflectCreate`1.FindAllClassByInterface(System.String)">
+            <summary>
+            获取某dll该接口的所有实现类
+            </summary>
+        </member>
+        <member name="M:FrameLib.Common.ReflectCreate`1.GetObjectByInterface(System.String)">
+            <summary>
+            获取某dll该接口的所有实现类的实例
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RequestTransferLib</name>
+    </assembly>
+    <members>
+        <member name="T:RequestTransferLib.ClientManage.ClientService3">
+            <summary>
+            连接中转服务
+            </summary>
+        </member>
+        <member name="F:RequestTransferLib.ClientManage.ClientService3.IsCompress">
+            <summary>
+            是否启用压缩
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.ClientManage.ClientService3.Start(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            连接中转服务
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.ClientManage.ExcuteRequest">
+            <summary>
+            反射执行
+            允许方法有可选参数,不支持重载,不支持ref/out
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.CompressHelper">
+            <summary>
+            压缩/解压
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.Compress_SharpZipLib(System.String)">
+            <summary>
+            ICSharpCode.SharpZipLib压缩
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.Decompress_SharpZipLib(System.String)">
+            <summary>
+            ICSharpCode.SharpZipLib解压
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.ExistsWinRar">
+            <summary>
+            如果已经安装winrar可通过如下代码返回winrar的安装位置，未安装则返回空字符串，最后并关闭注册表
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.CompressRar(System.String,System.String)">
+            <summary>
+            将目录和文件压缩为rar格式并保存到指定的目录
+            </summary>
+            <param name="soruceDir">要压缩的文件夹目录</param>
+            <param name="rarFileName">压缩后的rar保存路径</param>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.DeCompressRar(System.String,System.String)">
+            <summary>
+            将格式为rar的压缩文件解压到指定的目录
+            </summary>
+            <param name="rarFileName">要解压rar文件的路径</param>
+            <param name="saveDir">解压后要保存到的目录</param>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.GetNetType">
+            <summary>
+            获取网络类型 0联通 1电信 2其它 3移动
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.UpdateByMacUrl(System.Boolean,System.String,System.Int32)">
+            <summary>
+            更新服务器中该渠道的网络标识
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.CompressHelper.GetMd5(System.String)">
+            <summary>
+            得到md5值
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.EnumerableExtent">
+            <summary>
+            集合的扩展方法
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.EnumerableExtent.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            此扩展方法用于集合中相同元素的去重（比group by的方式效率高出约3倍）
+            使用方式：carMainSeriesList = carMainSeriesList.DistinctBy(m => new { m.ManufacturerID, m.MainSeriesName }).ToList();
+            </summary>
+            <typeparam name="TSource">对象元素</typeparam>
+            <typeparam name="TKey">筛选项</typeparam>
+            <param name="source">只能集合可以调用</param>
+            <param name="keySelector">筛选的表达式</param>
+            <returns>去重之后的集合</returns>
+        </member>
+        <member name="T:RequestTransferLib.Model.RequestResultModel">
+            <summary>
+            请求结果model
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestResultModel.IsSuccess">
+            <summary>
+            是否成功
+            它只表示请求客户端具体的方法是否成功
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestResultModel.ErrorMessage">
+            <summary>
+            失败时
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestResultModel.ResultData">
+            <summary>
+            成功时
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestResultModel.SwitchMacUrl">
+            <summary>
+            如果切换,切换后的MacUrl
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.Model.ResponseAsync">
+            <summary>
+            用于并发执行异步回调的处理
+            </summary>
+        </member>
+        <member name="F:RequestTransferLib.Model.ResponseAsync.ResoponseList">
+            <summary>
+            用于收集返回值集合
+            </summary>
+        </member>
+        <member name="F:RequestTransferLib.Model.ResponseAsync.IsAheadReturn">
+            <summary>
+            是否已经提前返回
+            </summary>
+        </member>
+        <member name="F:RequestTransferLib.Model.ResponseAsync.ExcuteCount">
+            <summary>
+            总计要执行的次数
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SendEMail.#ctor(System.String,System.String,System.Collections.Generic.List{System.String},System.String,System.String)">
+            <summary>  
+            处审核后类的实例  
+            </summary>  
+            <param name="To">收件人地址</param>  
+            <param name="From">发件人地址</param>  
+            <param name="Body">邮件正文</param>  
+            <param name="Title">邮件的主题</param>  
+            <param name="Password">发件人密码</param>  
+        </member>
+        <member name="M:RequestTransferLib.SendEMail.Attachments(System.String)">
+            <summary>  
+            添加附件  
+            </summary>  
+        </member>
+        <member name="M:RequestTransferLib.SendEMail.SendAsync(System.Net.Mail.SendCompletedEventHandler)">
+            <summary>  
+            异步发送邮件  
+            </summary>  
+            <param name="CompletedMethod"></param>  
+        </member>
+        <member name="M:RequestTransferLib.SendEMail.Send">
+            <summary>  
+            发送邮件  
+            </summary>  
+        </member>
+        <member name="M:RequestTransferLib.SocketBasic.Send2(System.Net.Sockets.Socket,System.String,System.Int32)">
+            <summary>
+            不检测压缩
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketMappingTable.#cctor">
+            <summary>
+            考虑到微服务集群数量众多并有加锁执行的特点,每个服务只一个调度连接
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketMappingTable.Switch(RequestTransferLib.ChannelSwitchModel,System.Int32)">
+            <summary>
+            请求是否切换渠道(超时时间:秒)
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketMappingTable.SwitchFree(RequestTransferLib.FreeChannelSwitchModel,System.Int32)">
+            <summary>
+            请求释放切换渠道(超时时间:秒)
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.ChannelSwitchModel.GetSwitch">
+            <summary>
+            用来区别是什么请求
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.FreeChannelSwitchModel.FreeSwitch">
+            <summary>
+            用来区别是什么请求
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.SocketTcpClient">
+            <summary>
+            调用中转服务访问客户端
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketTcpClient.GetResult(System.Collections.Generic.List{System.String},RequestTransferLib.Model.RequestTransferModel,System.Boolean)">
+            <summary>
+            发出请求并接收回复数据
+            </summary>
+            <param name="ipPorts">请求中转服务的ip端口列表</param>
+            <param name="paramModel">传递的请求参数(内含超时时间)</param>
+            <param name="isSwitch">是否允许进行渠道切换(中心业务服务允许,监控平台/cqa等不允许)</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:RequestTransferLib.SocketTcpClient.Switch(RequestTransferLib.Model.RequestTransferModel,RequestTransferLib.Model.RequestResultModel,RequestTransferLib.FreeChannelSwitchModel@)">
+            <summary>
+            渠道切换
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketTcpClient.SwitchFree(RequestTransferLib.FreeChannelSwitchModel)">
+            <summary>
+            渠道切换
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketTcpClient.GetParam(RequestTransferLib.Model.RequestTransferModel)">
+            <summary>
+            整理要传递的参数
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketTcpClient.IpPorts(System.Collections.Generic.List{System.String},RequestTransferLib.Model.RequestTransferModel)">
+            <summary>
+            参数校验,随机负载
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketTcpClient.GetResult(System.String,System.Net.Sockets.Socket,System.Int32)">
+            <summary>
+            获取返回结果
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.SocketCommon">
+            <summary>
+            已基本废弃,改用SocketBasic
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.GetSocket(System.Net.IPEndPoint@,System.Int32,System.String)">
+            <summary>
+            得到一个socket对象
+            ip为0表示本机
+            </summary>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.Connect(System.Net.Sockets.Socket,System.Net.IPEndPoint,System.Int32)">
+            <summary>
+            连接到服务端
+            </summary>
+            <param name="socket">连接对象</param>
+            <param name="IPEndPoint">目的端点</param>
+            <param name="socketTimeout">连接超时时间(0表示一直尝试),秒</param>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.SendAndReceive(System.Net.Sockets.Socket,System.String,System.Text.Encoding,System.Int32)">
+            <summary>
+            发送并接收回复数据(结束后不释放)
+            </summary>
+            <param name="socket">连接对象</param>
+            <param name="msg">要传递的数据</param>
+            <param name="encoding">编码格式</param>
+            <param name="socketTimeout">连接对象超时时间(0为无限大),秒</param>
+            <returns>返回结果</returns>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.Send(System.Net.Sockets.Socket,System.String,System.Text.Encoding,System.Int32)">
+            <summary>
+            发送数据(结束后不释放)
+            </summary>
+            <param name="socket">连接对象</param>
+            <param name="msg">要传递的数据</param>
+            <param name="encoding">编码格式</param>
+            <param name="socketTimeout">连接对象超时时间(0为无限大),秒</param>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.Send(System.Net.Sockets.Socket,System.Byte[],System.Int32)">
+            <summary>
+            发送数据(结束后不释放)
+            </summary>
+            <param name="socket">连接对象</param>
+            <param name="data">要传递的数据</param>
+            <param name="socketTimeout">连接对象超时时间(0为无限大),秒</param>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.Receive(System.Net.Sockets.Socket,System.Text.Encoding,System.Int32)">
+            <summary>
+            接收数据(结束后不释放)
+            </summary>
+            <param name="socket">连接对象</param>
+            <param name="encoding">编码格式</param>
+            <param name="socketTimeout">连接对象超时时间(0为无限大),秒</param>
+            <returns>获取结果</returns>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.Receive(System.Net.Sockets.Socket,System.Int32)">
+            <summary>
+            接收数据(结束后不释放)
+            </summary>
+            <param name="socket">连接对象</param>
+            <param name="socketTimeout">连接对象超时时间(0为无限大),秒</param>
+            <returns>原始结果</returns>
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.GetMacAddress">
+            <summary>  
+            获取MAC地址
+            </summary>  
+        </member>
+        <member name="M:RequestTransferLib.SocketCommon.GetAvailableThreads">
+            <summary>
+            获取当前可用线程数
+            </summary>
+        </member>
+        <member name="T:RequestTransferLib.Model.RequestTransferModel">
+            <summary>
+            请求参数model
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.UniqueIdentifie">
+            <summary>
+            要访问的客户端唯一标识(必填)
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.Timeout">
+            <summary>
+            超时时间,默认30秒
+            实际运行时可能会超出
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.AssemblyName">
+            <summary>
+            完整的程序集名称(必填)
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.NamespaceClassName">
+            <summary>
+            包括命名空间的类名或接口名(必填)
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.MethodName">
+            <summary>
+            方法名称(必填)
+            允许方法有可选参数,不支持重载,不支持ref/out
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.ParamsData">
+            <summary>
+            请求参数,字典形式
+            </summary>
+        </member>
+        <member name="P:RequestTransferLib.Model.RequestTransferModel.NetType">
+            <summary>
+            网络类型
+            0联通 1电信 2其它
+            </summary>
+        </member>
+    </members>
+</doc>

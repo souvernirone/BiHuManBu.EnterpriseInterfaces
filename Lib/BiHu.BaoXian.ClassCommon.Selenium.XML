@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHu.BaoXian.ClassCommon.Selenium</name>
+    </assembly>
+    <members>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.ArtificialParamModel.Timeout">
+            <summary>
+            用于超时
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.ArtificialParamModel.StartTime">
+            <summary>
+            ticks格式
+            用于超时
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.ArtificialParamModel.StopKey">
+            <summary>
+            唯一标识的key
+            用于必要时的中止
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ClassCommon.Selenium.Autoclicker">
+            <summary>
+            自动点击Windows窗口
+            http://blog.csdn.net/dream_dt/article/details/46356333
+            http://www.360doc.com/content/15/0709/07/26582694_483701864.shtml
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.Autoclicker.Click2(System.String,System.String)">
+            <summary>
+            由于层级太多,需要遍历子窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.ProcessPath">
+            <summary>
+            程序路径
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService._concurrencyCount">
+            <summary>
+            当前并发数
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService._objLock">
+            <summary>
+            全局加锁
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService._processId">
+            <summary>
+            进程ID
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.#cctor">
+            <summary>
+            人工模拟程序启动和管理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.StartProcess(System.String,System.String)">
+            <summary>
+            启动之前需先清理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.SocketAccess``2(System.String,``0,System.Int32,System.String)">
+            <summary>
+            Socket通信/单进程多线程
+            </summary>
+            <typeparam name="T1">参数类型</typeparam>
+            <typeparam name="T2">返回类型</typeparam>
+            <param name="method">调用方法名</param>
+            <param name="param">参数</param>
+            <param name="timeout">超时时间(秒)</param>
+            <param name="stopkey">用于中止请求的key</param>
+            <returns>T2</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.Close(System.Int32,System.Boolean)">
+            <summary>
+            关闭人工模拟程序
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.Clear(System.Int32,System.Boolean)">
+            <summary>
+            conhost辅助程序暂时无法处理
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.ArtificialName">
+            <summary>
+            程序名称
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.ArtificialPort">
+            <summary>
+            程序监测端口号
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.IsWorkTime">
+            <summary>
+            是否为工作时间段
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.Selenium.BaseAdapterService.ProcessCheckTime">
+            <summary>
+            检查进程是否开启时间间隔,秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.GetRandomTel">
+            <summary>
+            随机生成电话号码
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.IsHasCHZN(System.String)">
+            <summary>
+            检测是否有中文字符
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.DateTimeParse(System.String)">
+            <summary>
+            转为DateTime,不成功则为DateTime.MinValue
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.DoubleParse(System.String)">
+            <summary>
+            转为double,不成功则为0
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.AddCacheSliding(System.String,System.Object,System.Int32)">
+            <summary>
+            加入缓存,滑动过期,单位:秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.AddCacheAbsolute(System.String,System.Object,System.Int32)">
+            <summary>
+            加入缓存,定时过期,单位:秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.CacheIsHave(System.String)">
+            <summary>
+            缓存中是否有
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.RemoveCache(System.String)">
+            <summary>
+            移除缓存
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.IsTimeout(System.Int64,System.Int32)">
+            <summary>
+            是否已超时
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.GetMilliseconds(System.Int64)">
+            <summary>
+            用starttime得到到当前的时间
+            </summary>
+            <returns>单位:毫秒</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.GetSeconds(System.Int64)">
+            <summary>
+            用starttime得到到当前的时间
+            </summary>
+            <returns>单位:秒</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.ConvertJsonString(System.String)">
+            <summary>
+            格式化JSon串
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.FindAllClassByInterface``1">
+            <summary>
+            获取该接口的所有实现类
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.GetDescription(System.Type)">
+            <summary>
+            获取类上的Description注解
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.GetDescription(System.Enum)">
+            <summary>  
+            获取枚举值的描述文本  
+            </summary>  
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.CommonCla.ObjectIsNotNull(System.Type,System.Object)">
+            <summary>
+            对象的属性是否都不为null,仅限可以为null的类型
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Selenium.Log4NetHelp.LoadRollingFileAppender(log4net.Repository.ILoggerRepository)">
+            <summary>
+            加载滚动配置 RollingFileAppender
+            </summary>
+        </member>
+    </members>
+</doc>

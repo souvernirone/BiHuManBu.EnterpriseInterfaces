@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHuManBu.ExternalInterfaces.API</name>
+    </assembly>
+    <members>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.AgentController.EditAgentSave(BiHuManBu.ExternalInterfaces.Models.ViewModels.GetAgentViewModel)">
+            <summary>
+            修改经纪人信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.AgentController.QueryAgentInfo(BiHuManBu.ExternalInterfaces.Models.ViewModels.GetAgentViewModel)">
+            <summary>
+            查询经纪人列表信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.AgentController.DelAgentInfo(System.Int32)">
+            <summary>
+            删除代理人信息 （只删除没有下级代理人的信息）
+            </summary>
+            <param name="agentId">代理人id</param>
+            <returns>0:报错；1:成功；2:失败</returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.ConsumerDetailController.#ctor(BiHuManBu.ExternalInterfaces.Services.Interfaces.IConsumerDetailService,BiHuManBu.ExternalInterfaces.Services.Interfaces.IEnterpriseAgentService)">
+            <summary>
+            
+            </summary>
+            <param name="consumerDetailService"></param>
+            <param name="enterpriseAgentService"></param>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.ConsumerDetailController.AddCrmSteps(BiHuManBu.ExternalInterfaces.Models.ViewModels.Request.ConsumerDetailCrmTlViewModel)">
+            <summary>
+            1回访，2短信报价，3预约单，4保单已打印 调用生成记录
+            </summary>
+            <param name="bxCrm">Type 字段 1回访，2短信报价，3预约单，4保单已打印</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.ConsumerDetailController.GetCrmStepsList(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="buid"></param>
+            <param name="agentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.ManagerRoleController.GetManagerRoleInfo(System.Int32,System.String,System.String)">
+            <summary>
+            根据顶级经纪人 获取角色信息
+            </summary>
+            <param name="topAgentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.UserController.Login(BiHuManBu.ExternalInterfaces.Models.ViewModels.LoginViewModel)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="name"></param>
+            <param name="pwd"></param>
+            <returns>
+            
+            BusinessStatus:0登录失败，1登录成功，-10000请求参数错误
+            
+            </returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.UserController.Register(BiHuManBu.ExternalInterfaces.Models.ViewModels.RegisterViewModel)">
+            <summary>
+            注册
+            </summary>
+            <param name="code">验证码</param>
+            <param name="name">用户名</param>
+            <param name="pwd">密码</param>
+            <param name="isDaiLi">是否是顶级经纪人</param>
+            <param name="mobile">手机</param>
+            <param name="agentName">名称(公司名称或姓名)</param>
+            <param name="agentType">类型(修理厂、4s店)</param>
+            <param name="region">地域</param>
+            <param name="parentAgent">邀请码</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.UserController.SendSms(BiHuManBu.ExternalInterfaces.Models.ViewModels.SmsSendViewModel)">
+            <summary>
+            发短信
+            </summary>
+            <param name="mobile"></param>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.UserController.IsInvitationCode(BiHuManBu.ExternalInterfaces.Models.ViewModels.RegisterViewModel)">
+            <summary>
+            校验邀请码是否合法
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.RenewalInfoController.GetRenewalInfo(System.Int64,System.Int32)">
+            <summary>
+            获取续保详情
+            </summary>
+            <param name="buId">bx_userinfo.id</param>
+            <param name="currentAgentId">bx_agentId</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.RenewalInfoController.SaveCustomerInfo(BiHuManBu.ExternalInterfaces.Models.CustomerInfo)">
+            <summary>
+            保存客户信息
+            </summary>
+            <param name="customerInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.RenewalInfoController.SaveCarInfo(BiHuManBu.ExternalInterfaces.Models.CarInfo)">
+            <summary>
+            保存车辆信息
+            </summary>
+            <param name="carInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.ExternalInterfaces.API.Controllers.RenewalInfoController.SaveConsumerReview(BiHuManBu.ExternalInterfaces.Models.ConsumerReview)">
+            <summary>
+            录入回访信息
+            </summary>
+            <param name="consumerReview"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

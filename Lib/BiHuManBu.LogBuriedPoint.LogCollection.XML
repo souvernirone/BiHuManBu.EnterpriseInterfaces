@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHuManBu.LogBuriedPoint.LogCollection</name>
+    </assembly>
+    <members>
+        <member name="T:BiHuManBu.LogBuriedPoint.LogCollection.AspectF">
+            <summary>
+            操作日志类
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog._id">
+            <summary>
+            【无需赋值】
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog._TID">
+            <summary>
+            埋点编号
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.StepName">
+            <summary>
+             函数步骤名称
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.ExecuteLot">
+            <summary>
+                执行批次 用于排序
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.FunctionName">
+            <summary>
+            函数名
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.ExecuteElapsedTime">
+            <summary>
+             执行耗时
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.FunctionLogMsg">
+            <summary>
+            函数日志信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.ExecuteState">
+            <summary>
+                执行状态【成功 失败】
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.CreateTime">
+            <summary>
+             创建时间
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.ErrMsg">
+            <summary>
+                错误信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHFunctionLog.StackMsg">
+            <summary>
+            错误堆栈信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog._id">
+            <summary>
+            【无需赋值】
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.TraceID">
+            <summary>
+                埋点编号
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.ExecuteState">
+            <summary>
+                执行状态【成功 失败】
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.ExecuteLot">
+            <summary>
+                执行批次 用于排序
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.ExecuteElapsedTime">
+            <summary>
+                执行耗时
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.ErrMsg">
+            <summary>
+                错误信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.StackMsg">
+            <summary>
+                错误堆栈信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.BusinessName">
+            <summary>
+                业务名称
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.StepName">
+            <summary>
+                业务步骤名称
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.LogMsg">
+            <summary>
+                日志信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.CreateTime">
+            <summary>
+                创建时间
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.Inparameter">
+            <summary>
+                入参
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.Outparameter">
+            <summary>
+                出参
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.Attach">
+            <summary>
+                附加信息
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.Identification">
+            <summary>
+             执行标识
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.RequestSource">
+            <summary>
+                请求来源
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesLog.Func">
+            <summary>
+            方法步骤
+            </summary>
+        </member>
+        <member name="T:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog">
+            <summary>
+            壁虎日志
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog._id">
+            <summary>
+             mongo _id
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.TotalTime">
+            <summary>
+                全程耗时 【无需赋值】
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.CreateDate">
+            <summary>
+                创建时间
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.BusinessName">
+            <summary>
+                业务名称
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.Channel">
+            <summary>
+            业务来源
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.Platform">
+            <summary>
+            请求平台
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.Logs">
+            <summary>
+                日志步骤
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.BUid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.AgentId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.LicenseNo">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.VinNo">
+            <summary>
+            车架号
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.EngineNo">
+            <summary>
+            发动机号
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.RegisterDate">
+            <summary>
+            注册日期
+            </summary>
+        </member>
+        <member name="P:BiHuManBu.LogBuriedPoint.LogCollection.BHInterfacesRootLog.MoldName">
+            <summary>
+            品牌型号
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.LogBuriedPoint.LogCollection.LogAssistant.GenerateTraceIDToRequestHeader(System.String,System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            根据业务名生成TraceId
+            </summary>
+            <param name="businessName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.LogBuriedPoint.LogCollection.LogAssistant.GenerateBHFuncLog(System.String,System.String,System.String,System.Double)">
+            <summary>
+            生成FuncLog对象
+            </summary>
+            <param name="traceId"></param>
+            <param name="stepName">函数的作用</param>
+            <param name="functionName">函数的名称</param>
+            <param name="executeLot">执行的序号</param>
+            <returns></returns>
+        </member>
+        <member name="T:BiHuManBu.LogBuriedPoint.LogCollection.AspectFExtensions">
+            <summary>
+            操作日志扩展类
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.LogBuriedPoint.LogCollection.AspectFExtensions.LogBuriedPoint(System.Web.Http.Filters.HttpActionExecutedContext,System.String,System.String,System.Int32,System.Int64,System.String,System.String,System.Boolean,System.String,System.String,System.String,System.String)">
+            <summary>
+            日志统一埋点
+            </summary>
+            <param name="businessName">业务名称</param>
+            <param name="stepName">业务步骤名称</param>
+            <param name="executeLot">业务步骤执行顺序</param>
+            <param name="executeElapsedTime">步骤耗时</param>
+            <param name="requestSource">请求接口ip</param>
+            <param name="actionExecutedContext">HttpActionExecutedContext对象</param>
+            <param name="response">响应参数</param>
+            <param name="request">请求参数</param>
+            <param name="channel">业务渠道</param>
+        </member>
+    </members>
+</doc>

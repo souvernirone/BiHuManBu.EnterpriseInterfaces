@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHuManBu.Redis</name>
+    </assembly>
+    <members>
+        <member name="T:BiHuManBu.Redis.ConfigHelper">
+            <summary>
+            配置中心帮助类
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.ConfigHelper.GetConfigbyHttp(System.String,System.String,System.String)">
+            <summary>
+            获取APP配置中的一个键值
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.ConfigHelper.GetConfigbyHttp(System.String,System.String)">
+            <summary>
+            获取一整份APP配置
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.ConfigHelper.GetChannel(System.String)">
+            <summary>
+            获取渠道基本信息
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.Redis.RedisManagerSync.redisConfigInfo">
+            <summary>
+            redis配置文件信息
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.CreateManagerMaster">
+            <summary>
+            创建链接池管理对象
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetClient(System.Nullable{System.Int64})">
+            <summary>
+            客户端缓存操作对象
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetClientAssistant(System.Nullable{System.Int64})">
+            <summary>
+            客户端缓存操作对象
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.SetExpire(System.String,System.DateTime)">
+            <summary>
+            设置缓存过期
+            </summary>
+            <param name="key"></param>
+            <param name="datetime"></param>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.SetEntryInHash(System.String,System.String,System.String)">
+            <summary>
+            进入hash表中
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.RemoveEntryFromHash(System.String,System.String)">
+            <summary>
+            从hash表中移除
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetValueFromHash(System.String,System.String)">
+            <summary>
+            得到hash表中的单个键值
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetHashKeys(System.String)">
+            <summary>
+            获取hash的key集合
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetHashValues(System.String)">
+            <summary>
+            获取hash的value集合
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetHashCount(System.String)">
+            <summary>
+            得到hash表中的数量
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.Increment(System.String)">
+            <summary>
+            当存储的字符串是整数时，redis提供了一个实用的命令INCR，其作用是让当前键值递增，并返回递增后的值。如果key不存在，则自动会创建，如果存在自动+1
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.GetLock(System.String,System.String,System.Int64)">
+            <summary>
+            获取锁
+            </summary>
+            <param name="key"></param>
+            <param name="token"></param>
+            <param name="lNumofMilliseconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManagerSync.RemoveLock(System.String,System.String)">
+            <summary>
+            释放锁
+            </summary>
+            <param name="key"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BiHuManBu.Redis.RedisManager.redisConfigInfo">
+            <summary>
+            redis配置文件信息
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.CreateManagerMaster">
+            <summary>
+            创建链接池管理对象
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.CreateManagerAssistant">
+            <summary>
+            创建链接池管理对象
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.Redis.RedisManager._openAssistant">
+            <summary>
+            是否打开副写，1是 0否
+            默认打开
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetClient(System.Nullable{System.Int64})">
+            <summary>
+            客户端缓存操作对象
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetClientAssistant(System.Nullable{System.Int64})">
+            <summary>
+            客户端缓存操作对象
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.SetExpire(System.String,System.DateTime)">
+            <summary>
+            设置缓存过期
+            </summary>
+            <param name="key"></param>
+            <param name="datetime"></param>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.SetEntryInHash(System.String,System.String,System.String)">
+            <summary>
+            进入hash表中
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.RemoveEntryFromHash(System.String,System.String)">
+            <summary>
+            从hash表中移除
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetValueFromHash(System.String,System.String)">
+            <summary>
+            得到hash表中的单个键值
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetHashKeys(System.String)">
+            <summary>
+            获取hash的key集合
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetHashValues(System.String)">
+            <summary>
+            获取hash的value集合
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetHashCount(System.String)">
+            <summary>
+            得到hash表中的数量
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.Increment(System.String)">
+            <summary>
+            当存储的字符串是整数时，redis提供了一个实用的命令INCR，其作用是让当前键值递增，并返回递增后的值。如果key不存在，则自动会创建，如果存在自动+1
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.GetLock(System.String,System.String,System.Int64)">
+            <summary>
+            获取锁
+            </summary>
+            <param name="key"></param>
+            <param name="token"></param>
+            <param name="lNumofMilliseconds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.Redis.RedisManager.RemoveLock(System.String,System.String)">
+            <summary>
+            释放锁
+            </summary>
+            <param name="key"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

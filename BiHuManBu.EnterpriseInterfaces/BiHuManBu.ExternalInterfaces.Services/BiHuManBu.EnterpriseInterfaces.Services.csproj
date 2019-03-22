@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C3A6A9B-0488-42D9-9175-DE0DBD5E1FCA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BiHuManBu.ExternalInterfaces.Services</RootNamespace>
+    <AssemblyName>BiHuManBu.ExternalInterfaces.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\BiHuManBu.ExternalInterfaces.API\Content\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\BiHuManBu.ExternalInterfaces.API\Content\BiHuManBu.ExternalInterfaces.Services.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\BiHuManBu.ExternalInterfaces.API\Content\BiHuManBu.ExternalInterfaces.Services.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev_Release|AnyCPU'">
+    <OutputPath>bin\Dev_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA_Normal_Relesa|AnyCPU'">
+    <OutputPath>bin\QA_Normal_Relesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA_Normal_Release|AnyCPU'">
+    <OutputPath>bin\QA_Normal_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AipSdk, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\AipSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="BiHuManBu.Redis">
+      <HintPath>..\..\Lib\Redis4\BiHuManBu.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\mysql6\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\NPOI 2.2.0.0\dotnet4\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Exceptionless\log4net2.0.8.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Metrics">
+      <HintPath>..\..\Lib\metrics\Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="Metrics.InfluxDB">
+      <HintPath>..\..\Lib\metrics\Metrics.InfluxDB.dll</HintPath>
+    </Reference>
+    <Reference Include="MetricsLibrary">
+      <HintPath>..\..\Lib\metrics\MetricsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\Lib\NPOI 2.2.0.0\dotnet4\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\Lib\NPOI 2.2.0.0\dotnet4\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\Lib\NPOI 2.2.0.0\dotnet4\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\Lib\NPOI 2.2.0.0\dotnet4\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\Lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Qiniu, Version=7.2.15.0, Culture=neutral, PublicKeyToken=2894d75bb9f220bf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Qiniu.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Redis3\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Redis3\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis">
+      <HintPath>..\..\Lib\Redis4\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\dignostics\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccidentMqMessageService.cs" />
+    <Compile Include="AccidentOrderService.cs" />
+    <Compile Include="AccidentService.cs" />
+    <Compile Include="AccidentSettingService.cs" />
+    <Compile Include="AgentConfigService.cs" />
+    <Compile Include="AgentService.cs" />
+    <Compile Include="AgentSpecialRateService.cs" />
+    <Compile Include="AgentWithdrawalService.cs" />
+    <Compile Include="AppoinmentService.cs" />
+    <Compile Include="AuthorityService\Implementations\AuthorityService.cs" />
+    <Compile Include="AuthorityService\Interfaces\IAuthorityService.cs" />
+    <Compile Include="BatchRenewalService.cs" />
+    <Compile Include="BihuBusinessSystem\Class1Service.cs" />
+    <Compile Include="BindBusiuser\BindBusiuserService.cs" />
+    <Compile Include="BindBusiuser\CheckCanBandBusiuserListService.cs" />
+    <Compile Include="BindBusiuser\IBindBusiuserService.cs" />
+    <Compile Include="BindBusiuser\ICheckCanBandBusiuserListService.cs" />
+    <Compile Include="CallAnalyticsService.cs" />
+    <Compile Include="CameraBlacklistService.cs" />
+    <Compile Include="CameraDistributeServices.cs" />
+    <Compile Include="CameraService.cs" />
+    <Compile Include="ClaimService.cs" />
+    <Compile Include="CommonBehaviorService.cs" />
+    <Compile Include="Common\Class1.cs" />
+    <Compile Include="Common\ExcelHelper.cs" />
+    <Compile Include="Common\SMSAHelp.cs" />
+    <Compile Include="ConsumerDetailService.cs" />
+    <Compile Include="CrmStepsService\Implementations\CrmStepsService.cs" />
+    <Compile Include="CrmStepsService\Interfaces\ICrmStepsService.cs" />
+    <Compile Include="CustomerBusinessService.cs" />
+    <Compile Include="CustomerCategoriesService.cs" />
+    <Compile Include="CustomerOrderService.cs" />
+    <Compile Include="CustomerStatusService.cs" />
+    <Compile Include="CustomerTopLevelService.cs" />
+    <Compile Include="DefeatReasonHistoryService.cs" />
+    <Compile Include="DefeatReasonSettingService.cs" />
+    <Compile Include="EnterpriseAgentService.cs" />
+    <Compile Include="GroupAuthenService.cs" />
+    <Compile Include="Implements\AddressService.cs" />
+    <Compile Include="Implements\AgentService.cs" />
+    <Compile Include="Implements\AgentUKeyService.cs" />
+    <Compile Include="Implements\AppAchieveService.cs" />
+    <Compile Include="Implements\AppVerifyService.cs" />
+    <Compile Include="Implements\AreaService.cs" />
+    <Compile Include="Implements\AuthorizeFilter.cs" />
+    <Compile Include="Implements\BjdService.cs" />
+    <Compile Include="Implements\BxConfigService.cs" />
+    <Compile Include="Implements\CityService.cs" />
+    <Compile Include="Implements\CommonBehaviorService.cs" />
+    <Compile Include="Implements\ConsumerReviewService.cs" />
+    <Compile Include="Implements\DistributedHistoryService.cs" />
+    <Compile Include="Implements\IAgentWithdrawalService.cs" />
+    <Compile Include="Implements\ManagerUserRoleRelationService.cs" />
+    <Compile Include="Implements\ManagerUserService.cs" />
+    <Compile Include="Implements\CacheService.cs" />
+    <Compile Include="Implements\MessageService.cs" />
+    <Compile Include="Implements\NoticexbService.cs" />
+    <Compile Include="Implements\OrderAgentService.cs" />
+    <Compile Include="Implements\OrderService.cs" />
+    <Compile Include="Implements\PushSpecialMessageService.cs" />
+    <Compile Include="Implements\RecycleHistoryService.cs" />
+    <Compile Include="Implements\TableHeaderService.cs" />
+    <Compile Include="Implements\UserInfoService.cs" />
+    <Compile Include="Implements\ZuoXiService.cs" />
+    <Compile Include="Implements\UserService.cs" />
+    <Compile Include="Interfaces\AppInterfaces\IAgentService.cs" />
+    <Compile Include="Interfaces\AppInterfaces\IMessageService.cs" />
+    <Compile Include="Interfaces\BihuBusinessSystem\IClass1Service.cs" />
+    <Compile Include="Interfaces\IAccidentMqMessageService.cs" />
+    <Compile Include="Interfaces\IAccidentOrderService.cs" />
+    <Compile Include="Interfaces\IAccidentService.cs" />
+    <Compile Include="Interfaces\IAccidentSettingService.cs" />
+    <Compile Include="Interfaces\IAddressService.cs" />
+    <Compile Include="Interfaces\IAgentConfigService.cs" />
+    <Compile Include="Interfaces\IAgentService.cs" />
+    <Compile Include="Interfaces\IAgentSpecialRateService.cs" />
+    <Compile Include="Interfaces\IAgentUKeyService.cs" />
+    <Compile Include="Interfaces\IAppAchieveService.cs" />
+    <Compile Include="Interfaces\IAppoinmentService.cs" />
+    <Compile Include="Interfaces\IAppVerifyService.cs" />
+    <Compile Include="Interfaces\IAreaService.cs" />
+    <Compile Include="Interfaces\IBatchRenewalService.cs" />
+    <Compile Include="Interfaces\IBjdService.cs" />
+    <Compile Include="Interfaces\IBxConfigService.cs" />
+    <Compile Include="Interfaces\ICacheService.cs" />
+    <Compile Include="Interfaces\ICallAnalyticsService.cs" />
+    <Compile Include="Interfaces\ICameraBlacklistService.cs" />
+    <Compile Include="Interfaces\ICameraDistributeServices.cs" />
+    <Compile Include="Interfaces\ICameraService.cs" />
+    <Compile Include="Interfaces\ICityService.cs" />
+    <Compile Include="Interfaces\IClaimService.cs" />
+    <Compile Include="Interfaces\IConsumerDetailService.cs" />
+    <Compile Include="Interfaces\IConsumerReviewService.cs" />
+    <Compile Include="Interfaces\ICustomerBusinessService.cs" />
+    <Compile Include="Interfaces\ICustomerCategories.cs" />
+    <Compile Include="Interfaces\ICustomerOrderService.cs" />
+    <Compile Include="Interfaces\ICustomerStatusService.cs" />
+    <Compile Include="Interfaces\ICustomerTopLevelService.cs" />
+    <Compile Include="Interfaces\IDefeatReasonHistoryService.cs" />
+    <Compile Include="Interfaces\IDefeatReasonSettingService.cs" />
+    <Compile Include="Interfaces\IDistributedHistoryService.cs" />
+    <Compile Include="Interfaces\IEnterpriseAgentService.cs" />
+    <Compile Include="Interfaces\IGroupAuthenService.cs" />
+    <Compile Include="Interfaces\IInitRedisDataService.cs" />
+    <Compile Include="Interfaces\IManagerModuleService.cs" />
+    <Compile Include="Interfaces\IManagerRoleService.cs" />
+    <Compile Include="Interfaces\IManagerUserRoleRelationService.cs" />
+    <Compile Include="Interfaces\IManagerUserService.cs" />
+    <Compile Include="Interfaces\IMessageService.cs" />
+    <Compile Include="Interfaces\INoticeService.cs" />
+    <Compile Include="Interfaces\INoticexbService.cs" />
+    <Compile Include="Interfaces\IPoxyService.cs" />
+    <Compile Include="Interfaces\IOrderAgentService.cs" />
+    <Compile Include="Interfaces\IOrderCommissionService.cs" />
+    <Compile Include="Interfaces\IOrderService.cs" />
+    <Compile Include="Interfaces\IPayService.cs" />
+    <Compile Include="Interfaces\IPrecisePriceService.cs" />
+    <Compile Include="Interfaces\IPreferentialActivityService.cs" />
+    <Compile Include="Interfaces\IPushMessageService.cs" />
+    <Compile Include="Interfaces\IPushSpecialMessageService.cs" />
+    <Compile Include="Interfaces\IQuartzJobService.cs" />
+    <Compile Include="Interfaces\IQuoteHistoryService.cs" />
+    <Compile Include="Interfaces\IQuoteRecordService.cs" />
+    <Compile Include="Interfaces\IQuoteReqCarInfoService.cs" />
+    <Compile Include="Interfaces\IRatePolicySettingService.cs" />
+    <Compile Include="Interfaces\IRecycleHistoryService.cs" />
+    <Compile Include="Interfaces\IRenewalInfoService.cs" />
+    <Compile Include="Interfaces\IRenewalQuoteConfigService.cs" />
+    <Compile Include="Interfaces\ISettlementService.cs" />
+    <Compile Include="Interfaces\ISfAgentService.cs" />
+    <Compile Include="Interfaces\ISmsBulkSendManageService.cs" />
+    <Compile Include="Interfaces\ISmsService.cs" />
+    <Compile Include="Interfaces\ISmsUtilService.cs" />
+    <Compile Include="Interfaces\IStatisticsService.cs" />
+    <Compile Include="Interfaces\ITableHeaderService.cs" />
+    <Compile Include="Interfaces\ITempInsuredService.cs" />
+    <Compile Include="Interfaces\ITXInsureService.cs" />
+    <Compile Include="Interfaces\IUserinfoExpandService.cs" />
+    <Compile Include="Interfaces\IUserinfoRenewalInfoService.cs" />
+    <Compile Include="Interfaces\ITempUserService.cs" />
+    <Compile Include="Interfaces\IUserInfoService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IVerifyService.cs" />
+    <Compile Include="Interfaces\ILoginService.cs" />
+    <Compile Include="Interfaces\IWorkOrderService.cs" />
+    <Compile Include="Interfaces\IZuoXiService.cs" />
+    <Compile Include="LoginService.cs" />
+    <Compile Include="ManagerModuleService.cs" />
+    <Compile Include="ManagerRoleService.cs" />
+    <Compile Include="MapperService\Implementations\CustomerListMapperService.cs" />
+    <Compile Include="MapperService\Implementations\TeamIncomingSettingMapperService.cs" />
+    <Compile Include="MapperService\Interfaces\ICustomerListMapperService.cs" />
+    <Compile Include="MapperService\Interfaces\ITeamIncomingSettingMapperService.cs" />
+    <Compile Include="Mapper\AgentIdentityAndRateMapper.cs" />
+    <Compile Include="Mapper\CarOrderMapper.cs" />
+    <Compile Include="Mapper\CityMapper.cs" />
+    <Compile Include="Mapper\LastDayReInfoTotalMapper.cs" />
+    <Compile Include="Mapper\MessageMapper.cs" />
+    <Compile Include="Mapper\SaveQuoteMapper.cs" />
+    <Compile Include="Mapper\SmsAccountMapper.cs" />
+    <Compile Include="Mapper\SmsOrderMapper.cs" />
+    <Compile Include="Mapper\UserInfoMapper.cs" />
+    <Compile Include="Mapper\VehicleInfoMapper.cs" />
+    <Compile Include="Mapper\WorkOrderMapper.cs" />
+    <Compile Include="MessageService.cs" />
+    <Compile Include="Messages\Request\AddQuoteRecordRequest.cs" />
+    <Compile Include="Messages\Request\AgentBatchAuditRequest.cs" />
+    <Compile Include="Messages\Request\AgentDataRequest.cs" />
+    <Compile Include="Messages\RemoteMessage\BxCarVehicleInfo.cs" />
+    <Compile Include="Messages\RemoteMessage\DepriciatePriceModel.cs" />
+    <Compile Include="Messages\RemoteMessage\FindVehicleInfo.cs" />
+    <Compile Include="Messages\RemoteMessage\VehicleInfo.cs" />
+    <Compile Include="Messages\RemoteMessage\WaFindCarInfoResponse.cs" />
+    <Compile Include="Messages\Request\AgentUKeyRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AnalysisSmsRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddAgentRelationWithXgAccount.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddConsumerReviewRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddMessageRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddOrUpdateWorkOrderDetailRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddOrUpdateWorkOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddressRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddReVisitedRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AddTagRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\AppBaseRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\ApproveAgentRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\ChangeReInfoAgentRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\CheckXgAccountRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\CreateAccountRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\CreateJdOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\CreateOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\CreateOrUpdateBjdInfoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\CreateSureOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\DeleteCustomerRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\EditAgentRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\FindOrDeleteAddressRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetAddressRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetAgentIdentityAndRateRequestAboutApp.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetAgentRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetAgentResourceRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetAreaInfoesReqeust.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetBjdItemRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetByOpenIdRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetCarVehicleRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetConsumerInfoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetCountsRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetCrmStepsListRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetEscapedInfoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetMessageHistoryRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetMyBjdDetailRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetMyListRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetOrderByBuidRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetOrdersRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetPrecisePriceRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetReInfoDetailRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetReInfoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetSettedAgentsRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetSubmitInfoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetTempRelationRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\GetUsableSmsCountRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\IsHaveLicensenoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\LastDayReInfoTotalRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\MessageListRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\ModifyOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\MsgClosedOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\OrderDetailRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\PostAddAgentRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\PostDistributeRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\PostPrecisePriceRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\PostSendSmsRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\PostSubmitInfoRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\ReadMessageRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\ReVisitedListRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\SaveTempRelationRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\UpdateMessageStatusRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\UpdateOrderRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\UploadImgRequest.cs" />
+    <Compile Include="Messages\Request\AppRequest\WorkOrderDetailListRequest.cs" />
+    <Compile Include="Messages\Request\BatchRefreshRenewalRequest.cs" />
+    <Compile Include="Messages\Request\BatchRenewalRequest.cs" />
+    <Compile Include="Messages\Request\BusinessStatisticsRequest.cs" />
+    <Compile Include="Messages\Request\CacheRequest\ClearUKeyCacheRequest.cs" />
+    <Compile Include="Messages\Request\CanQuoteRequest.cs" />
+    <Compile Include="Messages\Request\CheckRefreshRenewalRequest.cs" />
+    <Compile Include="Messages\Request\CorrectCarRequest.cs" />
+    <Compile Include="Messages\Request\DeleteRepeatCustomerRequest.cs" />
+    <Compile Include="Messages\Request\EnterpriseAgentRequest.cs" />
+    <Compile Include="Messages\Request\ExcuteDistributeRequest.cs" />
+    <Compile Include="Messages\Request\ExternalLoginRequest.cs" />
+    <Compile Include="Messages\Request\GetAgentIdentityAndRateRequest.cs" />
+    <Compile Include="Messages\Request\GetAgentSourceRequest.cs" />
+    <Compile Include="Messages\Request\GetBusinessAgentListRequest.cs" />
+    <Compile Include="Messages\Request\GetCustomerListRequest.cs" />
+    <Compile Include="Messages\Request\GetCustomerRepeatListRequest.cs" />
+    <Compile Include="Messages\Request\GetDistributeForAgentRequest.cs" />
+    <Compile Include="Messages\Request\GetHebaoRateRequest.cs" />
+    <Compile Include="Messages\Request\GetQuoteHistoryRequest.cs" />
+    <Compile Include="Messages\Request\GetUserInfoStatusRequest.cs" />
+    <Compile Include="Messages\Request\LineUpRenewalRequest.cs" />
+    <Compile Include="Messages\Request\ManagerUserRequest.cs" />
+    <Compile Include="Messages\Request\Message\AddMsgAgentRequet.cs" />
+    <Compile Include="Messages\Request\Message\MsgDetailRequest.cs" />
+    <Compile Include="Messages\Request\Message\MsgLastDetailRequest.cs" />
+    <Compile Include="Messages\Request\Message\SendSignalRRequest.cs" />
+    <Compile Include="Messages\Request\MultipleDeleteRequest.cs" />
+    <Compile Include="Messages\Request\LastDayReInfoTotalRequest.cs" />
+    <Compile Include="Messages\Request\Message\AddMessageRequest.cs" />
+    <Compile Include="Messages\Request\Message\MessageListRequest.cs" />
+    <Compile Include="Messages\Request\Message\MsgClosedOrderRequest.cs" />
+    <Compile Include="Messages\Request\Message\ReadMessageRequest.cs" />
+    <Compile Include="Messages\Request\Order\CollectIdCardRequest.cs" />
+    <Compile Include="Messages\Request\Order\CommissionIntegralRequest.cs" />
+    <Compile Include="Messages\Request\Order\CreateOrderDetailRequest.cs" />
+    <Compile Include="Messages\Request\Order\GetOrderDetailRequest.cs" />
+    <Compile Include="Messages\Request\Order\IsValidOrderByDrivingInfoRequest.cs" />
+    <Compile Include="Messages\Request\Order\IsValidOrderRequest.cs" />
+    <Compile Include="Messages\Request\Order\ReBackOrderRequest.cs" />
+    <Compile Include="Messages\Request\Order\SaveCommissionRequest.cs" />
+    <Compile Include="Messages\Request\Order\UpdateOrderDetailRequest.cs" />
+    <Compile Include="Messages\Request\Order\UpdateOrderStatusRequest.cs" />
+    <Compile Include="Messages\Request\QuotationDetailRequest.cs" />
+    <Compile Include="Messages\Request\RateRequest.cs" />
+    <Compile Include="Messages\Request\SfH5Request.cs" />
+    <Compile Include="Messages\Request\SingleAgentDataRequest.cs" />
+    <Compile Include="Messages\Request\Sms\CreateAccountRequest.cs" />
+    <Compile Include="Messages\Request\Sms\GetSmsOrderDetailRequest.cs" />
+    <Compile Include="Messages\Request\Sms\SmsAccountRequest.cs" />
+    <Compile Include="Messages\Request\Sms\SmsCreateOrderRequest.cs" />
+    <Compile Include="Messages\Request\Sms\SmsOrderStatusRequest.cs" />
+    <Compile Include="Messages\Request\Sms\SmsRequest.cs" />
+    <Compile Include="Messages\Request\VMProject\GetGroupListRequest.cs" />
+    <Compile Include="Messages\Request\ZCPersonal\GetMyWalletAmountInfoRequest.cs" />
+    <Compile Include="Messages\Request\ZCPersonRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\GetNextLevelAgentListRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\GetTeamChildLevelListRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\GetTeamIncomingSettingRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\GetTeamManagerRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\GetTeamTaskSettingRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\SaveTeamIncomingSettingRequest.cs" />
+    <Compile Include="Messages\Request\ZCTeam\SaveTeamTaskSettingRequest.cs" />
+    <Compile Include="Messages\Response\AnalysisSmsResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\AddMessageResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\AddOrUpdateWorkOrderResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\AppBaseResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\ApproveAgentResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\BaseResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\ChangeReInfoAgentResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\CreateOrderResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\GetAgentIdentityAndRateResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\GetAgentListResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\GetAgentResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\GetAgentSourceResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\GetReInfoResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\LastDayReInfoTotalResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\MessageListResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\MsgClosedOrderResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\OrderCacheResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\OrderDetailResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\ReadMessageResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\UpdateChargeResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\UpdateOrderResponse.cs" />
+    <Compile Include="Messages\Response\AppResponse\WorkOrderDetailListResponse.cs" />
+    <Compile Include="Messages\Response\BankCardMessageResponse.cs" />
+    <Compile Include="Messages\Response\BaseResponse.cs" />
+    <Compile Include="Messages\Response\ChildAgentAndOrderResponse.cs" />
+    <Compile Include="Messages\Response\ConsumerDetailCrmListResponse.cs" />
+    <Compile Include="Messages\Response\ConsumerDetailCrmListResponsedeatil.cs" />
+    <Compile Include="Messages\Response\ConsumerDetailCrmListResponseStep.cs" />
+    <Compile Include="Messages\Response\CreateOrderResponse.cs" />
+    <Compile Include="Messages\Response\GetAgentIdentityAndRateResponse.cs" />
+    <Compile Include="Messages\Response\GetAgentResponse.cs" />
+    <Compile Include="Messages\Response\GetCityListResponse.cs" />
+    <Compile Include="Messages\Response\GetEscapedInfoResponse.cs" />
+    <Compile Include="Messages\Response\GetLoginReponse.cs" />
+    <Compile Include="Messages\Response\GetPrecisePriceReponse.cs" />
+    <Compile Include="Messages\Response\GetReInfoResponse.cs" />
+    <Compile Include="Messages\Response\GetReInfoResponse2.cs" />
+    <Compile Include="Messages\Response\GetSubmitInfoResponse.cs" />
+    <Compile Include="Messages\Response\Message\AddMessageResponse.cs" />
+    <Compile Include="Messages\Response\Message\LastDayReInfoTotalResponse.cs" />
+    <Compile Include="Messages\Response\Message\MessageListResponse.cs" />
+    <Compile Include="Messages\Response\Message\MsgClosedOrderResponse.cs" />
+    <Compile Include="Messages\Response\Message\MsgInfoResponse.cs" />
+    <Compile Include="Messages\Response\Message\ReadMessageResponse.cs" />
+    <Compile Include="Messages\Response\PostPrecisePriceResponse.cs" />
+    <Compile Include="Messages\Response\Sms\GetSmsAccountResponse.cs" />
+    <Compile Include="Messages\Response\Sms\GetSmsOrderDetailResponse.cs" />
+    <Compile Include="Messages\Response\Sms\GetSmsOrderResponse.cs" />
+    <Compile Include="Messages\Response\Sms\GetSmsOrderStatusResponse.cs" />
+    <Compile Include="Messages\Response\TaiPyQueryVehicleByVinEngiInfo.cs" />
+    <Compile Include="Messages\Response\UpdateChargeResponse.cs" />
+    <Compile Include="Messages\Response\UpdateOrderResponse.cs" />
+    <Compile Include="Messages\Response\WaGetTaiPyCarInfoResponse.cs" />
+    <Compile Include="Messages\Response\ZCPersonal\GetMyWalletAmountInfoResponse.cs" />
+    <Compile Include="Messages\Response\ZCTeam\GetTeamIncomingSettingResponse.cs" />
+    <Compile Include="Messages\ViewModel\ZCPersonal\AgentCanQuoteViewModel.cs" />
+    <Compile Include="Messages\ViewModel\ZCPersonal\GetMyWalletAmountInfoViewModel.cs" />
+    <Compile Include="Messages\ViewModel\ZCTeam\GetTeamIncomingSettingViewModel.cs" />
+    <Compile Include="Messages\ViewModel\ZCTeam\GetTeamTaskSettingViewModel.cs" />
+    <Compile Include="Messages\ViewModel\ZCTeam\TeamLeaderInfoViewModel.cs" />
+    <Compile Include="MsgIndexSendService\CheckMsgDataService.cs" />
+    <Compile Include="MsgIndexSendService\ICheckMsgDataService.cs" />
+    <Compile Include="MsgIndexSendService\IMsgSendService.cs" />
+    <Compile Include="MsgIndexSendService\ISendCrmMsgService.cs" />
+    <Compile Include="MsgIndexSendService\ISmsService.cs" />
+    <Compile Include="MsgIndexSendService\IUpdateMsgStsatusService.cs" />
+    <Compile Include="MsgIndexSendService\MsgSendService.cs" />
+    <Compile Include="MsgIndexSendService\ReturnMessgeView.cs" />
+    <Compile Include="MsgIndexSendService\SendCrmMsgService.cs" />
+    <Compile Include="MsgIndexSendService\SmsService.cs" />
+    <Compile Include="MsgIndexSendService\UpdateMsgStsatusService.cs" />
+    <Compile Include="NewRenewalInfoService\ApproxViewModel.cs" />
+    <Compile Include="NewRenewalInfoService\CheckUserService.cs" />
+    <Compile Include="NewRenewalInfoService\GetCenterValueService.cs" />
+    <Compile Include="NewRenewalInfoService\GetRenewalInfoService.cs" />
+    <Compile Include="NewRenewalInfoService\ICheckUserService.cs" />
+    <Compile Include="NewRenewalInfoService\IGetCenterValueService.cs" />
+    <Compile Include="NewRenewalInfoService\IGetRenewalInfoService.cs" />
+    <Compile Include="NewRenewalInfoService\IMapInformationService.cs" />
+    <Compile Include="NewRenewalInfoService\MapInformationService.cs" />
+    <Compile Include="NewRenewalInfoService\ResultMessage.cs" />
+    <Compile Include="NewRenewalInfoService\IReWriteRelationInfoService.cs" />
+    <Compile Include="NewRenewalInfoService\ReWriteRelationInfoService.cs" />
+    <Compile Include="NoticeService.cs" />
+    <Compile Include="OrderCommissionService.cs" />
+    <Compile Include="OrderService\Implementations\GetPolicyService.cs" />
+    <Compile Include="OrderService\Implementations\SetPolicyService.cs" />
+    <Compile Include="OrderService\Interfaces\IGetPolicyService.cs" />
+    <Compile Include="OrderService\Interfaces\ISetPolicyService.cs" />
+    <Compile Include="PayService.cs" />
+    <Compile Include="PrecisePriceService.cs" />
+    <Compile Include="PreferentialActivityService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PushMessageService.cs" />
+    <Compile Include="QuartzJobService.cs" />
+    <Compile Include="QuoteHistoryService.cs" />
+    <Compile Include="QuoteRecordService.cs" />
+    <Compile Include="QuoteReqCarInfoService.cs" />
+    <Compile Include="RatePolicySettingService.cs" />
+    <Compile Include="RCustomerOrderService\Achieves\CreateOrderService.cs" />
+    <Compile Include="RCustomerOrderService\Achieves\GetCommissionIntegralService.cs" />
+    <Compile Include="RCustomerOrderService\Achieves\GetOrderDetailService.cs" />
+    <Compile Include="RCustomerOrderService\Achieves\OrderPostThirdService.cs" />
+    <Compile Include="RCustomerOrderService\Achieves\UpdateOrderStatusService.cs" />
+    <Compile Include="RCustomerOrderService\Achieves\SetSaveCommissionService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\AgentCommissionViewModel.cs" />
+    <Compile Include="RCustomerOrderService\Extends\CheckEntityService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\CheckOrderView.cs" />
+    <Compile Include="RCustomerOrderService\Extends\CreateOrderCheckService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\ICheckEntityService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\ICreateOrderCheckService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\IMapEntityService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\IOrderCorrelateService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\ISetIssuingPeopleService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\MapEntityService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\OrderCorrelateService.cs" />
+    <Compile Include="RCustomerOrderService\Extends\SetIssuingPeopleService.cs" />
+    <Compile Include="RCustomerOrderService\Interfaces\ICreateOrderService.cs" />
+    <Compile Include="RCustomerOrderService\Interfaces\IGetCommissionIntegralService.cs" />
+    <Compile Include="RCustomerOrderService\Interfaces\IGetOrderDetailService.cs" />
+    <Compile Include="RCustomerOrderService\Interfaces\IOrderPostThirdService.cs" />
+    <Compile Include="RCustomerOrderService\Interfaces\IUpdateOrderStatusService.cs" />
+    <Compile Include="RCustomerOrderService\Interfaces\ISetSaveCommissionService.cs" />
+    <Compile Include="RenewalInfoService.cs" />
+    <Compile Include="RenewalQueue.cs" />
+    <Compile Include="RenewalQuoteConfigService.cs" />
+    <Compile Include="RepeatUserInfoService\Implementations\IsHaveLicensenoMainService.cs" />
+    <Compile Include="RepeatUserInfoService\Implementations\IsHaveLicensenoNoBusiService.cs" />
+    <Compile Include="RepeatUserInfoService\Implementations\IsHaveLicensenoService.cs" />
+    <Compile Include="RepeatUserInfoService\Implementations\IsHaveLicensenoToQuoteService.cs" />
+    <Compile Include="RepeatUserInfoService\Implementations\TwoLevelHaveLicensenoService.cs" />
+    <Compile Include="RepeatUserInfoService\Interfaces\IIsHaveLicensenoNoBusiService.cs" />
+    <Compile Include="RepeatUserInfoService\Interfaces\IIsHaveLicensenoService.cs" />
+    <Compile Include="RepeatUserInfoService\Interfaces\IIsHaveLicensenoMainService.cs" />
+    <Compile Include="RepeatUserInfoService\Interfaces\IIsHaveLicensenoToQuoteService.cs" />
+    <Compile Include="RepeatUserInfoService\Interfaces\ITwoLevelHaveLicensenoService.cs" />
+    <Compile Include="SettlementService.cs" />
+    <Compile Include="SfAgentService.cs" />
+    <Compile Include="ShenZhenCustomer.cs" />
+    <Compile Include="SmsBulkSendManageService.cs" />
+    <Compile Include="SmsService.cs" />
+    <Compile Include="SmsUtilService.cs" />
+    <Compile Include="StatisticsService.cs" />
+    <Compile Include="TeamIncomeService\Extends\GetTeamIncomeRequest.cs" />
+    <Compile Include="TeamIncomeService\Extends\TeamIncomeViewModel.cs" />
+    <Compile Include="TeamIncomeService\Implementations\TeamIncomeService.cs" />
+    <Compile Include="TeamIncomeService\Interfaces\ITeamIncomeService.cs" />
+    <Compile Include="TempInsuredService.cs" />
+    <Compile Include="TXInsureService.cs" />
+    <Compile Include="UserinfoExpandService.cs" />
+    <Compile Include="UserinfoRenewalInfoService.cs" />
+    <Compile Include="TempUserService.cs" />
+    <Compile Include="VerifyService.cs" />
+    <Compile Include="VMProjectService\Implementations\VMGroupService.cs" />
+    <Compile Include="VMProjectService\Interfaces\IVMGroupService.cs" />
+    <Compile Include="WorkOrderService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\AddPersonInfoService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\AgentCanQuoteService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\GetBankCardService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\GetMyWalletAmountInfoService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\GetPersonService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\UpdatePersonInfoService.cs" />
+    <Compile Include="ZCPersonalService\Implementations\ZCPersonalService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IAddPersonInfoService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IAgentCanQuoteService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IGetBankCardService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IGetMyWalletAmountInfoService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IGetPersonService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IUpdatePersonInfoService.cs" />
+    <Compile Include="ZCPersonalService\Interfaces\IZCPersonalService.cs" />
+    <Compile Include="ZCTeamService\Implementations\GetAgentSonPremiumService.cs" />
+    <Compile Include="ZCTeamService\Implementations\GetOrderAndChildAgentService.cs" />
+    <Compile Include="ZCTeamService\Implementations\GetTeamIncomingSettingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\GetTeamInfoByInComingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\TeamListService.cs" />
+    <Compile Include="ZCTeamService\Implementations\GetTeamTaskSettingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\SaveTeamIncomingSettingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\SaveTeamTaskSettingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\ZCTeamService.cs" />
+    <Compile Include="ZCTeamService\Implementations\TeamIncomingSettingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\TeamTaskSettingService.cs" />
+    <Compile Include="ZCTeamService\Implementations\UpdateCompleteTaskService.cs" />
+    <Compile Include="ZCTeamService\Implementations\UpdateGroupLevelService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IGetAgentSonPremiumService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IGetOrderAndChildAgentService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IGetTeamIncomingSettingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IGetTeamInfoByInComingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\ITeamListService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IGetTeamTaskSettingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\ISaveTeamIncomingSettingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\ISaveTeamTaskSettingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IZCTeamService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\ITeamIncomingSettingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\ITeamTaskSettingService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IUpdateCompleteTaskService.cs" />
+    <Compile Include="ZCTeamService\Interfaces\IUpdateGroupLevelService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BiHuManBu.ExternalInterfaces.Infrastructure\BiHuManBu.EnterpriseInterfaces.Infrastructure.csproj">
+      <Project>{8218e846-f22c-4318-9faa-838ede8cc58c}</Project>
+      <Name>BiHuManBu.EnterpriseInterfaces.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BiHuManBu.ExternalInterfaces.Models\BiHuManBu.EnterpriseInterfaces.Models.csproj">
+      <Project>{3814e7e1-9cae-4e12-bb7a-becda662c19a}</Project>
+      <Name>BiHuManBu.EnterpriseInterfaces.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BiHuManBu.ExternalInterfaces.Repository\BiHuManBu.EnterpriseInterfaces.Repository.csproj">
+      <Project>{3fbd97d2-bf8f-4637-861e-d1be5932360d}</Project>
+      <Name>BiHuManBu.EnterpriseInterfaces.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WithdrawCashService\Implementations\" />
+    <Folder Include="WithdrawCashService\Interfaces\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

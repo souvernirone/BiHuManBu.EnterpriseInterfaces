@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MetaDataSDK</name>
+    </assembly>
+    <members>
+        <member name="T:MetaDataSDK.CenterControlCommand">
+            <summary>
+            中控命令
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.CenterControlCommand.CommandType">
+            <summary>
+            命令类型 1 主机 2 从机
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.CenterControlCommand.CommandText">
+            <summary>
+            命令文本
+            </summary>
+        </member>
+        <member name="T:MetaDataSDK.CommandExecutionResult">
+            <summary>
+            命令执行结果
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.CommandExecutionResult.Status">
+            <summary>
+            执行状态 0 为成功
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.CommandExecutionResult.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.CommandExecutionResult.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.DateTimeHelper.GetTimestamp">
+            <summary>
+            获取时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MetaDataSDK.MetaDataUtil">
+            <summary>
+            用于描述元数据相关操作
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.MetaDataUtil.#ctor(System.String,System.Int32)">
+            <summary>
+            初始化 元数据操作对象
+            </summary>
+            <param name="metaDataAddress">MetaDataApp 地址</param>
+            <param name="connectionCount">建立连接个数，缺省值：10</param>
+        </member>
+        <member name="M:MetaDataSDK.MetaDataUtil.PutMetaData(System.String)">
+            <summary>
+            数据输入
+            </summary>
+            <param name="data">数据传输模型</param>
+        </member>
+        <member name="T:MetaDataSDK.RedisDoubleAgreement">
+            <summary>
+            Redis 双写约定
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.RedisDoubleAgreement.FunName">
+            <summary>
+            函数名
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.RedisDoubleAgreement.Arguments">
+            <summary>
+            参数列表
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.RedisDoubleAgreement.PlaceholderIndex">
+            <summary>
+            占位符位置
+            </summary>
+        </member>
+        <member name="T:MetaDataSDK.RemoteIpTestHelper">
+            <summary>
+            远程ip port 检测
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.RemoteIpTestHelper.Test(System.String,System.Int32)">
+            <summary>
+            检测
+            </summary>
+            <param name="ip">远程ip地址</param>
+            <param name="port">需测试的端口</param>
+            <returns></returns>
+        </member>
+        <member name="T:MetaDataSDK.SerializeMemoryHelper">
+            <summary>
+            序列化与反序列化到内存
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.SerializeToXml(System.Object)">
+            <summary>
+            XML序列化
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.DeserializeFromXml(System.Type,System.String)">
+            <summary>
+            XML返序列化
+            </summary>
+            <param name="type"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.SerializeToBinary(System.Object)">
+            <summary>
+            二进制序列化
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.DeserializeFromBinary(System.Byte[])">
+            <summary>
+            二进制反序列化
+            </summary>
+            <param name="someBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.DeserializeFromJson``1(System.String)">
+            <summary>
+            字符串反序列化
+            </summary>
+            <param name="strBase64"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.SerializeToJson``1(``0)">
+            <summary>
+            字符串序列化
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.JsonSerializer``1(``0)">
+            <summary>
+            JSON序列化
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.JsonDeserialize``1(System.String)">
+            <summary>
+            JSON反序列化
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.ConvertJsonDateToDateString(System.Text.RegularExpressions.Match)">
+            <summary>
+            将Json序列化的时间由/Date(1294499956278+0800)转为字符串
+            </summary>
+        </member>
+        <member name="M:MetaDataSDK.SerializeMemoryHelper.ConvertDateStringToJsonDate(System.Text.RegularExpressions.Match)">
+            <summary>
+            将时间字符串转为Json时间
+            </summary>
+        </member>
+        <member name="T:MetaDataSDK.TransferAgreement">
+            <summary>
+            传递约定
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.Data">
+            <summary>
+                接收到的元数据（json 字符串）
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.ZipStatus">
+            <summary>
+                压缩状态 0 已压缩 -1 为未压缩
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.SendMetaDataTime">
+            <summary>
+                客户端发送元数据时间
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.ReceiveMetaDataTime">
+            <summary>
+                服务端接收到元数据时间
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.MetaDataGzipTime">
+            <summary>
+                元数据压缩时间
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.GzipDataSendTime">
+            <summary>
+                高压数据发送远程时间
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.PackageSize">
+            <summary>
+                包大小 KB
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.RemoteReceiveGzipDataTime">
+            <summary>
+                远程接收高压数据时间
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.RemoteUnzipDataTime">
+            <summary>
+                远程解压数据时间
+            </summary>
+        </member>
+        <member name="P:MetaDataSDK.TransferAgreement.SyncFinishTime">
+            <summary>
+                同步完成时间
+            </summary>
+        </member>
+    </members>
+</doc>

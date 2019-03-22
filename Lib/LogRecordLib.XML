@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LogRecordLib</name>
+    </assembly>
+    <members>
+        <member name="M:LogRecordLib.Log4NetHelp.LoadRollingFileAppender(log4net.Repository.ILoggerRepository,System.Boolean)">
+            <summary>
+            加载滚动配置 RollingFileAppender
+            </summary>
+        </member>
+    </members>
+</doc>

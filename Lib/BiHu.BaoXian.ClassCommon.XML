@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHu.BaoXian.ClassCommon</name>
+    </assembly>
+    <members>
+        <member name="T:BiHu.BaoXian.ClassCommon.ArithmeticHelper">
+            <summary>
+            算法帮助类
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ArithmeticHelper.BinarySearchForList``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,``0,System.Func{``0,``0,System.Boolean},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            二分查找
+            </summary>
+            <param name="list">有序集合List</param>
+            <param name="low">开始索引 0</param>
+            <param name="high">结束索引 </param>
+            <param name="key">要查找的对象</param>
+            <param name="comparatorBefore">比较器,参数1等于参数2则返回true</param>
+            <param name="comparatorAfter">比较器,参数1大于参数2则返回true</param>
+            <returns>返回查找到的索引,没有则返回-1.注意:它并不一定是第一个,而是二分查找算法下的第一个</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ArithmeticHelper.QuickSort``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Func{``0,``0,System.Boolean},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            快速排序算法
+            </summary>
+            <param name="arrayList">集合</param>
+            <param name="low">开始索引 0</param>
+            <param name="high">结束索引</param>
+            <param name="comparatorBefore">比较器,参数1大于等于参数2则返回true</param>
+            <param name="comparatorAfter">比较器,参数1小于等于参数2则返回true</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ArithmeticHelper.SortUnit``1(System.Collections.Generic.List{``0},System.Int32,System.Int32,System.Func{``0,``0,System.Boolean},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            一次排序单元，完成此方法，key左边都比key小，key右边都比key大。
+            array排序数组,low排序起始位置,high排序结束位置，return单元排序后的数组
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ArithmeticHelper.FindString_Regex(System.String,System.String)">
+            <summary>
+            查找是否存在子字符串，正则方式
+            注：常用的高效方式
+            </summary>
+            <param name="operateStr">源字符串</param>
+            <param name="findStr">子字符串</param>
+            <returns>子字符串位置，-1表示未找到</returns>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.ArtificialParamModel.Timeout">
+            <summary>
+            用于超时
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.ArtificialParamModel.StartTime">
+            <summary>
+            ticks格式
+            用于超时
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.ArtificialParamModel.StopKey">
+            <summary>
+            唯一标识的key
+            用于必要时的中止
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ClassCommon.Autoclicker">
+            <summary>
+            自动点击Windows窗口
+            http://blog.csdn.net/dream_dt/article/details/46356333
+            http://www.360doc.com/content/15/0709/07/26582694_483701864.shtml
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.Autoclicker.Click2(System.String,System.String)">
+            <summary>
+            由于层级太多,需要遍历子窗口
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.BaseAdapterService._pipeNameNo">
+            <summary>
+            管道名称编号,用于记录日志
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.BaseAdapterService.ConcurrentProcessCount">
+            <summary>
+            当前进程数,初始化进程数
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.BaseAdapterService._concurrencyCount">
+            <summary>
+            当前并发数
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.BaseAdapterService._processIdDic">
+            <summary>
+            进程ID集合
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.BaseAdapterService.RemoveHs">
+            <summary>
+            执行历史记录,用于移除进程
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ClassCommon.BaseAdapterService._objLock">
+            <summary>
+            全局加锁
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.ProcessPath">
+            <summary>
+            进程的路径
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.#cctor">
+            <summary>
+            人工模拟程序启动和管理,这里可以不用加锁
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.ManageProcess(System.String,System.String,System.Boolean)">
+            <summary>
+            管理这个进程
+            </summary>
+            <param name="artificial">程序路径</param>
+            <param name="key">缓存key</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.StartProcess(System.String,BiHu.BaoXian.ClassCommon.BaseAdapterService.ProcessModel)">
+            <summary>
+            开启一个进程
+            </summary>
+            <param name="artificial">程序路径</param>
+            <param name="pipeName">管道名称参数</param>
+            <returns>进程ID</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.StartProcessCheck(System.Int32)">
+            <summary>
+            检查是否新增进程
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.RemoveProcessStart">
+            <summary>
+            移除进程的管理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.RemoveProcessCheck(System.Int32)">
+            <summary>
+            检查是否移除进程
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.PPAccess``2(System.String,``0,System.Int32,System.String)">
+            <summary>
+            命令管道/多进程单线程
+            </summary>
+            <typeparam name="T1">参数类型</typeparam>
+            <typeparam name="T2">返回类型</typeparam>
+            <param name="method">调用方法名</param>
+            <param name="param">参数</param>
+            <param name="timeout">超时时间(秒)</param>
+            <param name="stopkey">用于中止请求的key</param>
+            <returns>T2</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.SetReqKeyVal(System.String)">
+            <summary>
+            中止请求-特殊处理的方法
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.BaseAdapterService.Close(System.Int32)">
+            <summary>
+            重启人工模拟程序-特殊处理的方法
+            </summary>
+            <param name="times">尝试次数</param>
+            <returns></returns>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.BaseAdapterService.PipeName">
+            <summary>
+            程序名称,也用于命令管道名称
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.BaseAdapterService.IsWorkTime">
+            <summary>
+            是否是工作时间段
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.BaseAdapterService.ProcessMinCount">
+            <summary>
+            最少进程数
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.BaseAdapterService.ProcessMaxCount">
+            <summary>
+            最多进程数
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.BaseAdapterService.UnoccupiedProcessCount">
+            <summary>
+            始终保持的空余进程数
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ClassCommon.BaseAdapterService.ProcessCheckTime">
+            <summary>
+            检查进程是否开启时间间隔,秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.GetRandomTel">
+            <summary>
+            随机生成电话号码
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.IsHasCHZN(System.String)">
+            <summary>
+            检测是否有中文字符
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.DateTimeParse(System.String)">
+            <summary>
+            转为DateTime,不成功则为DateTime.MinValue
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.DoubleParse(System.String)">
+            <summary>
+            转为double,不成功则为0
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.AddCacheSliding(System.String,System.Object,System.Int32)">
+            <summary>
+            加入缓存,滑动过期,单位:秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.AddCacheAbsolute(System.String,System.Object,System.Int32)">
+            <summary>
+            加入缓存,定时过期,单位:秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.CacheIsHave(System.String)">
+            <summary>
+            缓存中是否有
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.RemoveCache(System.String)">
+            <summary>
+            移除缓存
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.IsTimeout(System.Int64,System.Int32)">
+            <summary>
+            是否已超时
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.GetMilliseconds(System.Int64)">
+            <summary>
+            用starttime得到到当前的时间
+            </summary>
+            <returns>单位:毫秒</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.GetSeconds(System.Int64)">
+            <summary>
+            用starttime得到到当前的时间
+            </summary>
+            <returns>单位:秒</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.ConvertJsonString(System.String)">
+            <summary>
+            格式化JSon串
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.FindAllClassByInterface``1">
+            <summary>
+            获取该接口的所有实现类
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.GetDescription(System.Type)">
+            <summary>
+            获取类上的Description注解
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.GetDescription(System.Enum)">
+            <summary>  
+            获取枚举值的描述文本  
+            </summary>  
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CommonCla.ObjectIsNotNull(System.Type,System.Object)">
+            <summary>
+            对象的属性是否都不为null,仅限可以为null的类型
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CompressHelper.Compress_SharpZipLib(System.String)">
+            <summary>
+            ICSharpCode.SharpZipLib压缩
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.CompressHelper.Decompress_SharpZipLib(System.String)">
+            <summary>
+            ICSharpCode.SharpZipLib解压
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ClassCommon.EnumerableExtent">
+            <summary>
+            集合的扩展方法
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.EnumerableExtent.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            此扩展方法用于集合中相同元素的去重（比group by的方式效率高出约3倍）
+            使用方式：carMainSeriesList = carMainSeriesList.DistinctBy(m => new { m.ManufacturerID, m.MainSeriesName }).ToList();
+            </summary>
+            <typeparam name="TSource">对象元素</typeparam>
+            <typeparam name="TKey">筛选项</typeparam>
+            <param name="source">只能集合可以调用</param>
+            <param name="keySelector">筛选的表达式</param>
+            <returns>去重之后的集合</returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.ReadAllText(System.String)">
+            <summary>
+            读取文件内容,小文件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.ReadKeyValue(System.String,System.String)">
+            <summary>
+            读取key value
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.SaveKeyValue(System.String,System.String,System.String)">
+            <summary>
+            保存key value
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.GetFile(System.String)">
+            <summary>
+            读取文件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.SaveFile(System.String,System.Byte[])">
+            <summary>
+            保存到文件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.Execute(System.String,System.Int32)">
+            <summary>  
+            执行DOS命令，返回DOS命令的输出  
+            </summary>  
+            <param name="dosCommand">dos命令</param>  
+            <param name="milliseconds">等待命令执行的时间,0为无限等待</param>  
+            <returns>返回DOS命令的输出</returns>  
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.GetAll(System.Collections.ArrayList,System.IO.DirectoryInfo,System.String)">
+            <summary>
+            搜索文件夹中的文件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.FileHelper.CopyDir(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>  
+            复制文件夹中的所有文件夹与文件到另一个文件夹
+            </summary>  
+            <param name="sourcePath">源文件夹</param>
+            <param name="destPath">目标文件夹</param>
+            <param name="notCopy">不用复制的文件列表</param>
+        </member>
+        <member name="T:BiHu.BaoXian.ClassCommon.PipeAccess">
+            <summary>
+            命令管道通信
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.PipeAccess.Access``2(System.String,System.String,``0,System.Int32,System.String)">
+            <summary>
+            访问人工模拟程序
+            </summary>
+            <typeparam name="T1">参数类型</typeparam>
+            <typeparam name="T2">返回类型</typeparam>
+            <typeparam name="pipeName">命令管道名称</typeparam>
+            <param name="method">调用方法名</param>
+            <param name="param">参数</param>
+            <param name="timeout">超时时间(秒)</param>
+            <param name="stopkey">用于中止请求的key</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ReflectCreate`1.GetObjectByInterface(System.String,System.String)">
+            <summary>
+            得到接口的实现类实例
+            </summary>
+            <param name="assemblyPath">相对路径</param>
+            <param name="classNamespace">命名空间.接口名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ReflectCreate`1.GetObjectsByDir(System.String,System.String)">
+            <summary>
+            得到接口的不同实现类的实例列表
+            </summary>
+            <param name="dirPath">目录相对路径</param>
+            <param name="interfaceNamespace">命名空间.接口名</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ReflectCreate`1.FindAllClassByInterface(System.String)">
+            <summary>
+            获取某dll该接口的所有实现类
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.ReflectCreate`1.GetObjectByInterface(System.String)">
+            <summary>
+            获取某dll该接口的所有实现类的实例
+            </summary>
+        </member>
+    </members>
+</doc>

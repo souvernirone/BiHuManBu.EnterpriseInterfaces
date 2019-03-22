@@ -1,0 +1,667 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHu.BaoXian.ArtificialCommon</name>
+    </assembly>
+    <members>
+        <member name="T:BiHu.BaoXian.ClassCommon.AppHotKey">
+            <summary>
+            设置全局热键
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.AppHotKey.RegKey(System.IntPtr,System.Int32,BiHu.BaoXian.ClassCommon.AppHotKey.KeyModifiers,System.Windows.Forms.Keys)">
+            <summary>  
+            注册热键  
+            </summary>  
+            <param name="hwnd">窗口句柄</param>  
+            <param name="hotKey_id">热键ID</param>  
+            <param name="keyModifiers">组合键</param>  
+            <param name="key">热键</param>  
+        </member>
+        <member name="M:BiHu.BaoXian.ClassCommon.AppHotKey.UnRegKey(System.IntPtr,System.Int32)">
+            <summary>  
+            注销热键  
+            </summary>  
+            <param name="hwnd">窗口句柄</param>  
+            <param name="hotKey_id">热键ID</param>  
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.CleanTempFiles(System.String)">
+            <summary> 
+            删除临时文件
+            </summary>
+            <param name="name">完整或缺省的文件名称</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.CleanAllTempFiles">
+            <summary>
+            删除所有临时文件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetCookie(System.String)">
+            <summary>
+            获取完整cookie
+            </summary>
+            <param name="url">当前处于登录状态</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetElementByName(mshtml.IHTMLElement,System.String)">
+            <summary>
+            根据name找到元素
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetElementByName(mshtml.IHTMLDocument2,System.String)">
+            <summary>
+            根据name找到元素
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetValue(mshtml.IHTMLElement,System.String)">
+            <summary>
+            设置value值
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetValue(mshtml.IHTMLElement)">
+            <summary>
+            得到value值
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.OnDbClick(mshtml.IHTMLElement)">
+            <summary>
+            触发ondblclick事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.OnClick(mshtml.IHTMLElement)">
+            <summary>
+            触发onclick事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.OnChange(mshtml.IHTMLElement)">
+            <summary>
+            触发onchange事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.OnBlur(mshtml.IHTMLElement)">
+            <summary>
+            触发onblur事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetValueOnChange(mshtml.IHTMLElement,System.String)">
+            <summary>
+            设置值并触发onchange事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetValueOnBlur(mshtml.IHTMLElement,System.String)">
+            <summary>
+            设置值并触发onblur事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetSelectText(System.Object)">
+            <summary>
+            得到下拉框text值
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetSelectValue(System.Object)">
+            <summary>
+            得到下拉框value值
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetSelectByInnerText(System.Object,System.String)">
+            <summary>
+            根据InnerText设置下拉框
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetSelectByValue(System.Object,System.String)">
+            <summary>
+            根据value设置下拉框
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.GetImgByDocument(mshtml.IHTMLDocument2,System.String)">
+            <summary>
+            利用系统剪切板从页面上获取图片
+            有并发问题
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.DownloadBitmap(System.String,System.Int32,System.String)">
+            <summary>
+            下载图片
+            超时间单位:秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.ExcuteJS(mshtml.IHTMLDocument2,System.String)">
+            <summary>
+            执行js
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.ExcuteJS(mshtml.HTMLWindow2,System.String)">
+            <summary>
+            执行js
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.webBrowser_DocumentCompleted_showModalDialog(System.Object,System.Windows.Forms.WebBrowserDocumentCompletedEventArgs)">
+            <summary>
+            showModelDialog的处理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetObjectForScripting_showModalDialog(mshtml.IHTMLDocument2)">
+            <summary>
+            劫持showModalDialog
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.SetObjectForScripting(mshtml.HTMLWindow2,System.Action{mshtml.HTMLWindow2})">
+            <summary>
+            递归所有的forme,进行劫持
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.CommonWb.Dialog(System.String,System.Object,System.Object,BiHu.BaoXian.ArtificialCommon.DialogForm,System.Windows.Forms.WebBrowser)">
+            <summary>
+            showModelDialog处理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.FormHelper.HideTabAltMenu(System.IntPtr)">
+            <summary>
+            设置在Alt+tab键中不显示
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.IEVersion.BrowserEmulationSet">
+            <summary>
+            直接设置为IE8
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.IProcessBase.Begin">
+            <summary>
+            开始执行
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.IProcessBase.End">
+            <summary>
+            结束执行,还必须调用父类的End()方法
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.MonitorConfig">
+            <summary>
+            监测文件变化
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MonitorConfig.Monitor(System.String,System.String[])">
+            <summary>
+            监测config配置文件变化
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.TimerHelp.#ctor(System.Int32,System.Int32)">
+            <summary>
+            创建一个定时器对象。
+            </summary>
+            <param name="times">指示定时时间，以毫秒为单位。</param>
+            <param name="intervalTimes">指示定时之中的间歇时间，用于检查是否取消执行。</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.TimerHelp.Start(System.Object)">
+            <summary>
+            启动定时器，如果定时器已经启动，则引发异常。
+            </summary>
+            <param name="param">在定时完成时可能被使用到的传递对象。</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.TimerHelp.Stop(System.Boolean)">
+            <summary>
+            请求中止执行，如果定时器尚未启动，则引发异常。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.TimerHelp.Times">
+            <summary>
+            指示定时时间，以毫秒为单位。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.TimerHelp.IntervalTimes">
+            <summary>
+            指示定时之中的间歇时间，用于检查是否取消执行。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.TimerHelp.Excuting">
+            <summary>
+            指示定时器是否处于运行状态
+            </summary>
+        </member>
+        <member name="E:BiHu.BaoXian.ArtificialCommon.TimerHelp.ExcuteCompleted">
+            <summary>
+            达到定时事件
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.TimerHelp.ExcuteCompletedAgency">
+            <summary>
+            达到定时事件代理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.WebBrowserImage.SaveSnapshot(System.Windows.Forms.WebBrowser,System.String,System.Int32,System.Int32)">
+            <summary>
+            WebBrowser快照,记录操作流程中的各阶段
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.WebBrowserImage.SaveSnapshot(System.Windows.Forms.WebBrowser,System.String)">
+            <summary>
+            WebBrowser快照,记录操作流程中的各阶段
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.WebBrowserImage.WebControlImage">
+            <summary> 
+            WebBrowser获取图形 
+            </summary> 
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.WebBrowserImage.WebControlImage.Snapshot.TakeSnapshot(System.Object,System.Drawing.Rectangle)">
+            <summary> 
+            取快照 
+            </summary> 
+            <param name="pUnknown">Com 对象</param> 
+            <param name="bmpRect">图象大小</param> 
+            <returns></returns> 
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.X509StoreHelp">
+            <summary>
+            设置安全证书
+            http://www.cnblogs.com/xiaofoyuan/archive/2012/12/10/2811270.html
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.X509StoreHelp.SetX509Store(System.String,System.String)">
+            <summary>
+            设置安全证书
+            默认到期前一个月重置
+            </summary>
+            <param name="subjectName">证书名称</param>
+            <param name="X509StorePath">证书路径</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DebugForm.DebugForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            在使用这个窗口时有dispose
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DebugForm.Record(System.Windows.Forms.RichTextBox,System.String)">
+            <summary>
+            执行过程说明框,此文本框的并发访问有极大问题,确保使用时不会并发
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DebugForm.btn_Go_Click(System.Object,System.EventArgs)">
+            <summary>
+            Go按钮
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.DebugForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DebugForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DebugForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.DebugForm.InitialUrl">
+            <summary>
+            初始访问地址
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.DialogForm._argument">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DialogForm.Init(System.Object)">
+            <summary>
+            初始化参数
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DialogForm.DialogForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            这个窗口每次使用都需要重新创建,同样也要销毁
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DialogForm.popupForm_NavigateComplete2(System.Object,System.Object@)">
+            <summary>
+            在js执行前传入window对象
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.DialogForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DialogForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.DialogForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.DialogForm.BaseUrl">
+            <summary>
+            基地址
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.DialogForm.RreturnValue">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.MainForm.IsShutdown">
+            <summary>
+            标记是否关闭程序
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.MainForm._MaxCount">
+            <summary>
+            最大执行并发数限制,默认一个进程一个
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.MainForm._maxProcessForm">
+            <summary>
+            最大处理窗口处理
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.#ctor(System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            窗口初始化
+            </summary>
+            <param name="isShow">是否显示</param>
+            <param name="tryLoginTime">登录状态的检测间隔时间,单位:秒</param>
+            <param name="maxCount">此进程最大并发数</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.MainForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            主页初始化,只触发一次
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.TryLogin">
+            <summary>
+            需要尝试登录,用于在外部触发
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.StartLoginMonitor">
+            <summary>
+            开启登录的持续监测
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.StartPipeListen(System.String)">
+            <summary>
+            开启监听调用,命令管道方式
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.ProcessAndResult(BiHu.BaoXian.ArtificialCommon.ProcessForm,System.String,BiHu.BaoXian.ClassCommon.ArtificialParamModel)">
+            <summary>
+            设置执行并返回结果
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.MonitorStopProcess(System.String)">
+            <summary>
+            中断请求的监视
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.GetProcessForm">
+            <summary>
+            得到一个在线程中的处理窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.btn_test_Click(System.Object,System.EventArgs)">
+            <summary>
+            调试窗口
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.MainForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.MainForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.MainForm.PipeName">
+            <summary>
+            命令管道名称
+            </summary>
+        </member>
+        <member name="T:BiHu.BaoXian.ArtificialCommon.ProcessBase">
+            <summary>
+            每个操作流程会使用一个新的
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._isNotUse">
+            <summary>
+            标记是否不再复用此窗口
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._isCloseForm">
+            <summary>
+            标记是否在结束时关闭此窗口
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._isShutdown">
+            <summary>
+            标记是否在结束时关闭程序
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._form">
+            <summary>
+            需要交互的页面
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._paramModel">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._isQuit">
+            <summary>
+            标识是否已经退出此操作
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._objLock">
+            <summary>
+            用于限制一些潜在的并发操作
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessBase._sb">
+            <summary>
+            用于记录操作日志
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.SetResult(System.String)">
+            <summary>
+            设置返回结果,即执行结束
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.RecordLog(System.String,LogRecordLib.Log4NetHelp2)">
+            <summary>
+            记录日志
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.RecordLog(System.String,System.Object[])">
+            <summary>
+            显示并记录操作信息
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.GetCookie">
+            <summary>
+            得到webbrowser的cookie
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.TryGoin(System.String)">
+            <summary>
+            _form.webBrowser重新进入
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.TimeoutCloseF(System.Windows.Forms.Form,System.Int32,LogRecordLib.Log4NetHelp2)">
+            <summary>
+            超过一定时间后弹窗强制关闭,默认180秒
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.SetDialogF(System.Windows.Forms.WebBrowserDocumentCompletedEventHandler,BiHu.BaoXian.ControlLibrary.MyWebBrowser.DocHostShowUIShowMessageEventHandler)">
+            <summary>
+            设置Dialog窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.CloseDialogF">
+            <summary>
+            直接关闭Dialog弹窗
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.IsAliveDialogF">
+            <summary>
+            Dialog弹窗是否完整,状态不保证
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.SetPopupF(System.Windows.Forms.WebBrowserDocumentCompletedEventHandler,BiHu.BaoXian.ControlLibrary.MyWebBrowser.DocHostShowUIShowMessageEventHandler)">
+            <summary>
+            设置open弹窗
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.ClosePopupF">
+            <summary>
+            直接关闭open弹窗
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.IsAlivePopupF">
+            <summary>
+            open弹窗是否完整,状态不保证
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.End(LogRecordLib.Log4NetHelp2)">
+            <summary>
+            结束时必须调用
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.End_NotUse">
+            <summary>
+            标记不再使用窗口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessBase.EndAndLog(LogRecordLib.Log4NetHelp2,System.String)">
+            <summary>
+            关闭窗口并记录日志
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.PopupForm.PopupForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            这个窗口每次使用都需要重新创建,同样也要销毁
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.PopupForm.Dialog(System.String,System.Object,System.Object)">
+            <summary>
+            使用之前必须重置DialogF,并附加相应事件
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.PopupForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.PopupForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.PopupForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessForm._process">
+            <summary>
+            处理程序,每次须重新创建
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessForm._isDispose">
+             <summary>
+            dispose标识
+             </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessForm._isNotUse">
+            <summary>
+            标记是否不再使用这个窗口
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessForm.StateTimesTicks">
+            <summary>
+            记录上次状态的时间
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessForm._assistActions">
+            <summary>
+            需要辅助方法执行的代码
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.StartAssist">
+            <summary>
+            辅助方法,当需要借助主线程进行某种操作时
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.AddAssistAction(System.Action)">
+            <summary>
+            增加方法到辅助方法中进行执行,执行完之后会自动清除
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.ProcessForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            在使用这个窗口时有dispose
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.Dialog(System.String,System.Object,System.Object)">
+            <summary>
+            使用之前必须重置DialogF,并附加相应事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.SetActionType(BiHu.BaoXian.ClassCommon.ArtificialParamModel)">
+            <summary>
+            设置操作类型,也即设置处理事件
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.Quit">
+            <summary>
+            执行完成之后的退出
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.ProcessForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            当这个窗口关闭时,属于它的都需要销毁
+            </summary>
+        </member>
+        <member name="F:BiHu.BaoXian.ArtificialCommon.ProcessForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:BiHu.BaoXian.ArtificialCommon.ProcessForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.ArtificialCommon.ProcessForm.Result">
+            <summary>
+            执行事件完成后返回的结果,未完成时为null
+            </summary>
+        </member>
+    </members>
+</doc>

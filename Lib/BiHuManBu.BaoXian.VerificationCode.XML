@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHuManBu.BaoXian.VerificationCode</name>
+    </assembly>
+    <members>
+        <member name="T:BiHuManBu.BaoXian.VerificationCode.CharacteristicCode">
+            <summary>
+            特征码库,不同类型验证码需要传不同特征码库
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.autoagent_cpic_com_loginimg">
+            <summary>
+            验证码类型 http://autoagent.cpic.com.cn:8081/CPIC09Auto/loginimg
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.login_passport_9you_com">
+            <summary>
+            验证码类型 https://login.passport.9you.com/identifyingCode.jsp?0.953521374380216
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian">
+            <summary>
+            验证码类型 各保险公司不规则字母+数字验证码
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_TPY">
+            <summary>
+            验证码类型 http://issue.cpic.com.cn/ecar/auth/getCaptchaImage?0.2968323709359699
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_RB_Renewal">
+            <summary>
+            验证码类型 http://10.134.136.48:8000/prpall/business/getValidateCode.do
+            需要登录后才能获取
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_TPY2">
+            <summary>
+            验证码类型 http://issue.cpic.com.cn/ecar/auth/getCaptchaImage?0.2968323709359699
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_PA_Renewal">
+            <summary>
+            验证码类型 https://icorepnbs.pingan.com.cn/icore_pnbs/do/quote/queryValidateCode?r=0.8462489401210169
+            需要登录后才能获取
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_RB_Login">
+            <summary>
+            验证码类型 http://157.122.153.67:9000/khyx/um/umtuser/ValidCode.do?sed=1499655086015
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_JiaoGuanXinXi">
+            <summary>
+            交管信息验证码
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_ZGTP_Login">
+            <summary>
+            中国太平登录验证码
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_RB_v4_Login">
+            <summary>
+            人保v4系统登录验证码
+            https://icar.epicc.com.cn:8443/icar/saaUserPower/validateCode.do
+            </summary>
+        </member>
+        <member name="F:BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum.baoxian_RB_market_Login">
+            <summary>
+            人保营销系统登录验证码
+            http://157.122.153.67:9000/khyx/um/umtuser/ValidCode.do
+            </summary>
+        </member>
+        <member name="T:BiHuManBu.BaoXian.VerificationCode.Levenshtein">
+            <summary>
+            用于计算两个字符的相似度(编辑距离算法)
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.Levenshtein.LevenshteinDistance(System.String,System.String,System.Double@,System.Boolean)">
+            <summary>  
+            编辑距离（Levenshtein Distance）
+            </summary>  
+            <param name="source">源串</param>  
+            <param name="target">目标串</param>  
+            <param name="similarity">输出：相似度，值在0～１</param>  
+            <param name="isCaseSensitive">是否大小写敏感</param>  
+            <returns>源串和目标串之间的编辑距离</returns>  
+        </member>
+        <member name="T:BiHuManBu.BaoXian.VerificationCode.SimilarPhoto">
+            <summary>
+            汉明距离
+            </summary>
+        </member>
+        <member name="T:BiHuManBu.BaoXian.VerificationCode.VerificationCode">
+            <summary>
+            兼容新类
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.GetVCode(BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum,System.String)">
+            <summary>
+            根据验证码图片Base64编码获取验证码
+            </summary>
+            <param name="characteristic">验证码类型</param>
+            <param name="sourcebm">验证码图片Base64编码</param>
+            <returns>验证码</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.GetVCode(BiHuManBu.BaoXian.VerificationCode.CharacteristicEnum,System.Drawing.Bitmap)">
+            <summary>
+            根据验证码图片获取验证码
+            </summary>
+            <param name="characteristic">验证码类型</param>
+            <param name="sourcebm">验证码图片</param>
+            <returns>验证码</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.GetSplitVCode(System.Drawing.Bitmap)">
+            <summary>
+            按照不粘连的方式直接分割图片的特征码
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.GetSplitPics(System.Drawing.Bitmap)">
+            <summary>
+            平均分割图片
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.SelectVCode(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            识别选择特征码对应字符
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.ClearPicBorder(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            去图形边框
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.ClearNoise(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            去掉杂点,可能不完整
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.ClearNoiseTwo(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            去除三个点,可能无法公用
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.AroundIsHavePoint(System.Drawing.Bitmap,System.Int32,System.Int32,System.Int32,System.Collections.Generic.List{System.String})">
+            <summary>
+            周围是否有点
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.PixelAndGray(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            灰度化和二值化
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerificationCode.GetCode(System.Drawing.Bitmap)">
+            <summary>
+            得到切割后的单个图片特征码
+            </summary>
+            <returns>特征码</returns>
+        </member>
+        <member name="T:BiHuManBu.BaoXian.VerificationCode.VerifyCode">
+            <summary>
+            用于复杂验证码处理
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetGrayNumColor(System.Drawing.Color)">
+            <summary>
+            根据RGB，计算灰度值
+            </summary>
+            <param name="posClr">Color值</param>
+            <returns>灰度值，整型</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GrayByPixels">
+            <summary>
+            灰度转换,逐点方式
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearPicBorder(System.Int32)">
+            <summary>
+            去图形边框
+            </summary>
+            <param name="borderWidth"></param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GrayByLine">
+            <summary>
+            灰度转换,逐行方式
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetPicValidByValue(System.Int32,System.Int32)">
+            <summary>
+            得到有效图形并调整为可平均分割的大小
+            </summary>
+            <param name="dgGrayValue">灰度背景分界值</param>
+            <param name="CharsCount">有效字符数</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetPicValidByValue(System.Int32)">
+            <summary>
+            得到有效图形,图形为类变量
+            </summary>
+            <param name="dgGrayValue">灰度背景分界值</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetPicValidByValue(System.Drawing.Bitmap,System.Int32)">
+            <summary>
+            得到有效图形,图形由外面传入
+            </summary>
+            <param name="dgGrayValue">灰度背景分界值</param>
+            <param name="CharsCount">有效字符数</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetSplitPics(System.Int32,System.Int32)">
+            <summary>
+            平均分割图片
+            </summary>
+            <param name="RowNum">水平上分割数</param>
+            <param name="ColNum">垂直上分割数</param>
+            <returns>分割好的图片数组</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetCode">
+            <summary>
+            得到切割后的单个图片特征码
+            </summary>
+            <returns>特征码</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.SelectVCode(System.String,System.Collections.Generic.List{BiHuManBu.BaoXian.VerificationCode.CCode})">
+            <summary>
+            识别选择特征码对应字符
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.SelectVCode_Levenshtein(System.String,System.Collections.Generic.List{BiHuManBu.BaoXian.VerificationCode.CCode})">
+            <summary>
+            识别选择特征码对应字符
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetDgGrayValue">
+            <summary>
+            得到灰度图像前景背景的临界值 最大类间方差法
+            </summary>
+            <returns>前景背景的临界值</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearNoise(System.Int32,System.Int32)">
+            <summary>
+             去掉杂点（适合杂点/杂线粗为1）
+            </summary>
+            <param name="dgGrayValue">背前景灰色界限</param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearNoise(System.Int32)">
+            <summary>
+            3×3中值滤波除杂
+            </summary>
+            <param name="dgGrayValue"></param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ErosionPic(System.Int32,System.Int32,System.Boolean[0:,0:])">
+            <summary>
+            该函数用于对图像进行腐蚀运算。结构元素为水平方向或垂直方向的三个点，
+            中间点位于原点；或者由用户自己定义3×3的结构元素。
+            </summary>
+            <param name="dgGrayValue">前后景临界值</param>
+            <param name="nMode">腐蚀方式：0表示水平方向，1垂直方向，2自定义结构元素。</param>
+            <param name="structure"> 自定义的3×3结构元素</param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ThiningPic(System.Int32)">
+            <summary>
+            该函数用于对图像进行细化运算。要求目标图像为灰度图像
+            </summary>
+            <param name="dgGrayValue"></param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.Sharpen(System.Single)">
+            <summary>
+            锐化要启用不安全代码编译
+            </summary>
+            <param name="val">锐化程度。取值[0,1]。值越大锐化程度越高</param>
+            <returns>锐化后的图像</returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.BitmapTo1Bpp(System.Double)">
+            <summary>
+            图片二值化
+            </summary>
+            <param name="hsb"></param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.PixelByGray(System.Int32)">
+            <summary>
+            二值化
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.FloodFill(System.Drawing.Point,System.Drawing.Color,System.Int32)">
+            <summary>  
+            Flood fill algorithm.  
+            </summary>  
+            <param name="location">The start point.</param>  
+            <param name="fillColor">The color to be filled.</param>  
+            <param name="threshould">One parameter to control fill effect,from 0 to 255.</param>  
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearBlocks(System.Int32)">
+            <summary>
+            去除干扰块
+            </summary>
+            <param name="dgGrayValue"></param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.RotateLeft(System.Drawing.Bitmap,System.Int32,System.Int32)">
+            <summary>
+            旋转还原
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetImgWidth">
+            <summary>
+            得到有效区域宽度
+            </summary>
+            <param name="dgGrayValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.Tailor">
+            <summary>
+            裁剪
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.Tailor2(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            裁剪
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.Zoom(System.Int32,System.Int32)">
+            <summary>
+            缩放
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.SpecialProcess(System.Int32)">
+            <summary>
+            找到临界点+画线+二值化
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.GetSplitPics(System.Int32)">
+            <summary>
+            按照不粘连的方式直接分割图片的特征码
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearBlocks2(System.Int32,System.Int32)">
+            <summary>
+            去除噪点/干扰线
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearBlocks3(System.Int32,System.Int32)">
+            <summary>
+            去除干扰
+            </summary>
+            <param name="number">连续的点数</param>
+            <param name="interval">灰度相差多少</param>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearTheBitmap">
+            <summary>
+            处理干净验证码
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.MagnifyShrink(System.Int32,System.Int32)">
+            <summary>
+            放大缩小
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.StrippingAndSlicing(System.Int32)">
+            <summary>
+            切块
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.TailorTheBitmap(System.Int32)">
+            <summary>
+            上下左右裁剪图片，得到中间部分
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.ClearLetterBox(System.Int32)">
+            <summary>
+            去边
+            </summary>
+        </member>
+        <member name="M:BiHuManBu.BaoXian.VerificationCode.VerifyCode.SuccessivelyClearBlocks(System.Int32)">
+            <summary>
+            依次去除杂点
+            </summary>
+        </member>
+    </members>
+</doc>

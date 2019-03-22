@@ -1,0 +1,1299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3814E7E1-9CAE-4E12-BB7A-BECDA662C19A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BiHuManBu.ExternalInterfaces.Models</RootNamespace>
+    <AssemblyName>BiHuManBu.ExternalInterfaces.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\BiHuManBu.ExternalInterfaces.API\Content\BiHuManBu.ExternalInterfaces.Models.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\BiHuManBu.ExternalInterfaces.API\Content\BiHuManBu.ExternalInterfaces.Models.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev_Release|AnyCPU'">
+    <OutputPath>bin\Dev_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA_Normal_Relesa|AnyCPU'">
+    <OutputPath>bin\QA_Normal_Relesa\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA_Normal_Release|AnyCPU'">
+    <OutputPath>bin\QA_Normal_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Lib\mysql6\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\mysql6\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\mysql6\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\mysql6\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppIRepository\IAgentConfigRepository.cs" />
+    <Compile Include="AppIRepository\IAgentRepository.cs" />
+    <Compile Include="AppIRepository\IMessageRepository.cs" />
+    <Compile Include="AppIRepository\IOrderRepository.cs" />
+    <Compile Include="AppIRepository\ITagFlagRepository.cs" />
+    <Compile Include="AppIRepository\IUserInfoRepository.cs" />
+    <Compile Include="bj_baodanxianzhong.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bj_baodanxinxi.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_answern_city.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_bankcard.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_busiuser.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_config_count.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_withdrawal.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_anxin_delivery.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_bank.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_batchrefreshrenewal.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_batchrenewal.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_batchrenewal_erroritem.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_batchrenewal_time_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_busiuser.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_busiusersetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_camera_blacklist.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_camera_detail.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_camera_history.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_car_renewal.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_car_renewal_premium.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_companyrelation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_customerstatus.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_distributedtime.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_distributed_history.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_epolicy.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_epolicy_log.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_group_authen.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_login_log.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_order.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_preferential_activity.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quotehistory_related.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quote_record.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_ratepolicy_item.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_ratepolicy_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_recycle_history.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_renewal_time_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_sf_agent.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_sms_order_error.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_table_header.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_tagflag.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_tempuserinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_userinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_userinfo_expand.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_userinfo_renewal_index.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_zc_team_every_incoming_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_zc_team_incoming_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_zc_team_task_setting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_collection.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_commission.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_paymentresult.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_quoteresult.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_related_info.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_savequote.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_serial.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_order_steps.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_pay_ax.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dtos\AgentDto.cs" />
+    <Compile Include="Dtos\BusiuserDto.cs" />
+    <Compile Include="Dtos\CameraHistoryDto.cs" />
+    <Compile Include="Dtos\CheckDto.cs" />
+    <Compile Include="dd_pay_bank.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dd_pay_way.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dtos\ClueNotificationDto.cs" />
+    <Compile Include="Dtos\DistributedRecycleDto.cs" />
+    <Compile Include="Dtos\DistributeDto.cs" />
+    <Compile Include="Dtos\DistributeUserinfoDto.cs" />
+    <Compile Include="Dtos\ListBusiuserDto.cs" />
+    <Compile Include="Dtos\MoneyListDto.cs" />
+    <Compile Include="Dtos\OrderAgentDto.cs" />
+    <Compile Include="Dtos\RatePolicySettingDto.cs" />
+    <Compile Include="Dtos\RevokeUserInfoDto.cs" />
+    <Compile Include="Dtos\SearchCustomerListDto.cs" />
+    <Compile Include="Dtos\UserinfoDto.cs" />
+    <Compile Include="Dtos\YearReviewCountDto.cs" />
+    <Compile Include="Dtos\SearchOrderDto.cs" />
+    <Compile Include="Dtos\TransferDataDto.cs" />
+    <Compile Include="dz_baodanxianzhong.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dz_baodanxinxi.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dz_correct_license_plate.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dz_reconciliation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\BtnAuthType.cs" />
+    <Compile Include="Enums\BusinessStatusType.cs" />
+    <Compile Include="bx_address.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agentpoint.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_wchat.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_xgaccount_relationship.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_appsetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_area.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_bj_union.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_buid_activity.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_camera_config.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_config.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_customercategories.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_defeatreasonhistory.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_defeatreasonsetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_devicedetail.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_forbid_mobile.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_forbid_record.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_gsc_renewal.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_history_contract.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_images.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_msgindex.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_notice_xb.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_order_quoteresult.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_order_savequote.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_order_submit_info.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_order_userinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_para_bhtype.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_report_claim.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_sms_order.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_system_message.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_zuoxi.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\PayOutErrCode.cs" />
+    <Compile Include="Enums\DeleteType.cs" />
+    <Compile Include="Enums\EnumAXBX.cs" />
+    <Compile Include="Enums\EnumCollectLimitInterfaceType.cs" />
+    <Compile Include="Enums\EnumNation.cs" />
+    <Compile Include="Enums\OptionType.cs" />
+    <Compile Include="Enums\RoleType.cs" />
+    <Compile Include="IRepository\IAccidentMqMessageRepository.cs" />
+    <Compile Include="IRepository\IAccidentOrderRepository.cs" />
+    <Compile Include="IRepository\IAccidentRepository.cs" />
+    <Compile Include="IRepository\IAccidentSettingRepository.cs" />
+    <Compile Include="IRepository\IAddressRepository.cs" />
+    <Compile Include="IRepository\IAgentAnswernCityRepository.cs" />
+    <Compile Include="IRepository\ICameraConfigRepository.cs" />
+    <Compile Include="IRepository\IClaimRepository.cs" />
+    <Compile Include="IRepository\IClueManagerRepository.cs" />
+    <Compile Include="IRepository\IManagerFunctionRelationRepository.cs" />
+    <Compile Include="IRepository\IManagerFunctionRepository.cs" />
+    <Compile Include="IRepository\IAgentWithdrawalRepository.cs" />
+    <Compile Include="IRepository\IAreaRepository.cs" />
+    <Compile Include="IRepository\IBxConfigRepository.cs" />
+    <Compile Include="IRepository\ICameraBlacklistRepository.cs" />
+    <Compile Include="IRepository\ICameraDetailRepository.cs" />
+    <Compile Include="IRepository\ICameraHistoryRepository.cs" />
+    <Compile Include="IRepository\ICarInfoRepository.cs" />
+    <Compile Include="IRepository\ICarRenewalRepository.cs" />
+    <Compile Include="IRepository\ICompanyrelationRepository.cs" />
+    <Compile Include="IRepository\ICustomerStatusRepository.cs" />
+    <Compile Include="IRepository\IDeleteAgentLogRepository.cs" />
+    <Compile Include="IRepository\IEpolicyRepository.cs" />
+    <Compile Include="IRepository\IHeBaoDianWeiRepository.cs" />
+    <Compile Include="IRepository\IAgentDistributedRepository.cs" />
+    <Compile Include="IRepository\IAgentUkeyRepository.cs" />
+    <Compile Include="IRepository\IAppoinmentRepository.cs" />
+    <Compile Include="IRepository\ICrmStepsRepository.cs" />
+    <Compile Include="IRepository\IGroupAuthenRepository.cs" />
+    <Compile Include="IRepository\ICallAnalyticsRepository.cs" />
+    <Compile Include="IRepository\ICameraRepository.cs" />
+    <Compile Include="IRepository\ICarModelRepository.cs" />
+    <Compile Include="IRepository\ICityQuoteDayRepository.cs" />
+    <Compile Include="IRepository\IConsumerReviewRepository.cs" />
+    <Compile Include="IRepository\ICustomerCategoriesRepository.cs" />
+    <Compile Include="IRepository\IDefeatReasonHistoryRepository.cs" />
+    <Compile Include="IRepository\IDefeatReasonSettingRepository.cs" />
+    <Compile Include="IRepository\ILastInfoRepository.cs" />
+    <Compile Include="IRepository\ILoginLogRepository.cs" />
+    <Compile Include="IRepository\IDistributedHistoryRepository.cs" />
+    <Compile Include="IRepository\IManagerModuleButtonRepository.cs" />
+    <Compile Include="IRepository\IManagerUserRoleRelationRepository.cs" />
+    <Compile Include="IRepository\IForbidRecordRepository.cs" />
+    <Compile Include="IRepository\IMessageRepository.cs" />
+    <Compile Include="IRepository\INoticeMessageRepository.cs" />
+    <Compile Include="IRepository\INoticexbRepository.cs" />
+    <Compile Include="IRepository\IOrderCommissionRepository.cs" />
+    <Compile Include="IRepository\IOrderRepository.cs" />
+    <Compile Include="IRepository\IPreferentialActivityRepository.cs" />
+    <Compile Include="IRepository\IQuartzJobRepository.cs" />
+    <Compile Include="IRepository\IQuotehistoryRelatedRepository.cs" />
+    <Compile Include="IRepository\IQuoteHistoryRepository.cs" />
+    <Compile Include="IRepository\IQuoteRecordRepository.cs" />
+    <Compile Include="IRepository\IQuoteResultCarinfoRepository.cs" />
+    <Compile Include="IRepository\IQuoteResultRepository.cs" />
+    <Compile Include="IRepository\IRatepolicyItemRepository.cs" />
+    <Compile Include="IRepository\IRatePolicySettingRepository.cs" />
+    <Compile Include="IRepository\IRecycleHistoryRepository.cs" />
+    <Compile Include="IRepository\ISaveQuoteRepository.cs" />
+    <Compile Include="IRepository\ISettlementRepository.cs" />
+    <Compile Include="IRepository\ISfAgentRepository.cs" />
+    <Compile Include="IRepository\ISmsBulkSendManageRepository.cs" />
+    <Compile Include="IRepository\ISmsContentRepository.cs" />
+    <Compile Include="IRepository\ISmsOrderRepository.cs" />
+    <Compile Include="IRepository\IStatisticsRepository.cs" />
+    <Compile Include="IRepository\ISubmitInfoRepository.cs" />
+    <Compile Include="IRepository\ITableHeaderRepository.cs" />
+    <Compile Include="IRepository\ITagsettingAgentRelationshipRepository.cs" />
+    <Compile Include="IRepository\ITagsettingRepository.cs" />
+    <Compile Include="IRepository\ITeamEveryIncomingSettingRepository.cs" />
+    <Compile Include="IRepository\ITeamIncomingSettingRepository.cs" />
+    <Compile Include="IRepository\ITeamTaskSettingRepository.cs" />
+    <Compile Include="IRepository\ITXClueFollowRecord.cs" />
+    <Compile Include="IRepository\ITXCluesAgentRelationship.cs" />
+    <Compile Include="IRepository\ITXInsureRepository.cs" />
+    <Compile Include="IRepository\IUserClaimRepository.cs" />
+    <Compile Include="IRepository\IUserinfoExpandRepository.cs" />
+    <Compile Include="IRepository\IUserRepository.cs" />
+    <Compile Include="IRepository\IZCPersonalRepository.cs" />
+    <Compile Include="IRepository\IZCTeamRepository.cs" />
+    <Compile Include="IRepository\IZuoXiRepository.cs" />
+    <Compile Include="IRepository\IManagerRoleButtonRelationRepository.cs" />
+    <Compile Include="IRepository\VMProject\IGroupPremiumRepository.cs" />
+    <Compile Include="manager_function_db.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_module_button.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_role_button_relation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_role_function_relation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_user_role_relation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="BiHuManBu.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiHuManBu.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiHuManBu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiHuManBu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiHuManBu.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_config.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_distributed.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_rate.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_report.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_special_rate.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_token.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_agent_ukey.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_batchrenewal_item.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_carinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_carmodel.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_car_order.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_charge.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_charge_history.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_city.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_cityquoteday.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_claim_detail.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_consumer_review.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_crm_steps.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_gsc_userinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_hebaodianwei.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_lastinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_message.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quoterenewal_agent_config.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quoterenewal_city_config.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quotereq_carinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quoteresult.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_quoteresult_carinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_reconciliation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_renewalquote.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_savequote.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_sms_account.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_sms_account_content.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_submit_info.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_tagsetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_tagsetting_agent_relationship.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_tempinsuredinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_temprelation_intermediate_userinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_transferrecord.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bx_userinfo_renewal_info.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AgentData.cs" />
+    <Compile Include="Model\AgentDredgeCity.cs" />
+    <Compile Include="Model\AgentStatisticsViewModel.cs" />
+    <Compile Include="Model\AgentUsedViewModel.cs" />
+    <Compile Include="Model\AXEntity.cs" />
+    <Compile Include="Model\BatchRefreshRenewalModel.cs" />
+    <Compile Include="Model\BatchRenewalCommon.cs" />
+    <Compile Include="Model\BatchRenewalItemModel.cs" />
+    <Compile Include="Model\BatchRenewalItemViewModel.cs" />
+    <Compile Include="Model\BatchRenewalQueue.cs" />
+    <Compile Include="Model\BehalfQuoteModel.cs" />
+    <Compile Include="Model\BusinessStatistics.cs" />
+    <Compile Include="Model\CameraDetailModel.cs" />
+    <Compile Include="Model\ChannelScope.cs" />
+    <Compile Include="Model\companyRelationModel.cs" />
+    <Compile Include="Model\CompositeBuIdLicenseNo.cs" />
+    <Compile Include="Model\CqaUserModel.cs" />
+    <Compile Include="IRepository\IAgentConfigRepository.cs" />
+    <Compile Include="IRepository\IAgentRateRepository.cs" />
+    <Compile Include="IRepository\IAgentRepository.cs" />
+    <Compile Include="IRepository\IAgentSpecialRateRepository.cs" />
+    <Compile Include="IRepository\IBatchRenewalRepository.cs" />
+    <Compile Include="IRepository\ICityRepository.cs" />
+    <Compile Include="IRepository\IConsumerDetailRepository.cs" />
+    <Compile Include="IRepository\ICustomerBusinessRepository.cs" />
+    <Compile Include="IRepository\IEnterpriseAgentRepository.cs" />
+    <Compile Include="IRepository\ILoginRepository.cs" />
+    <Compile Include="IRepository\IManagerModuleRepository.cs" />
+    <Compile Include="IRepository\IManagerRoleModuleRelationRepository.cs" />
+    <Compile Include="IRepository\IManagerRoleRepository.cs" />
+    <Compile Include="IRepository\IManagerRoleTagsettingRelationRepository.cs" />
+    <Compile Include="IRepository\IManagerUserRepository.cs" />
+    <Compile Include="IRepository\INoticeRepository.cs" />
+    <Compile Include="IRepository\IQuoteReqCarInfoRepository.cs" />
+    <Compile Include="IRepository\IRenewalInfoRepository.cs" />
+    <Compile Include="IRepository\IRenewalQuoteConfigRepository.cs" />
+    <Compile Include="IRepository\IRepositoryBase.cs" />
+    <Compile Include="IRepository\ITempInsuredRepository.cs" />
+    <Compile Include="IRepository\ITransferRecordRepository.cs" />
+    <Compile Include="IRepository\IUserinfoRenewalInfoRepository.cs" />
+    <Compile Include="ITempUserRepository.cs" />
+    <Compile Include="IRepository\IUserInfoRepository.cs" />
+    <Compile Include="manageruser.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_module_db.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_role_db.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="manager_role_module_relation.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CustomerListModel.cs" />
+    <Compile Include="Model\DDOrder.cs" />
+    <Compile Include="Model\DefeatAnalysis.cs" />
+    <Compile Include="Model\DefeatAnalyticsRequest.cs" />
+    <Compile Include="Model\EPolicycs.cs" />
+    <Compile Include="Model\ExcelErrorData.cs" />
+    <Compile Include="Model\initUserInfoModelNew.cs" />
+    <Compile Include="Model\QuoteDetailModel.cs" />
+    <Compile Include="Model\QuoteHistoryModel.cs" />
+    <Compile Include="Model\SearchWhere.cs" />
+    <Compile Include="Model\SettlementInsertedModel.cs" />
+    <Compile Include="Model\TableMessage.cs" />
+    <Compile Include="Model\UntreatedModel.cs" />
+    <Compile Include="Model\UpdateCarRenewalIndexModel.cs" />
+    <Compile Include="Model\UpdateUserInfoTimeModel.cs" />
+    <Compile Include="Model\UserInfoIdAgentModel.cs" />
+    <Compile Include="Model\UserInfoModel.cs" />
+    <Compile Include="NoticeMessageDataModel.cs" />
+    <Compile Include="PartialModels\bx_agent\bx_agent.cs" />
+    <Compile Include="PartialModels\bx_agent\IBxAgent.cs" />
+    <Compile Include="PartialModels\bx_agent\NullBxAgent.cs" />
+    <Compile Include="PartialModels\bx_agent\Specification\AgentHasQuoteGrantSpecification.cs" />
+    <Compile Include="PartialModels\bx_agent\Specification\AgentHasSubmitGrantSpecification.cs" />
+    <Compile Include="PartialModels\bx_agent\Specification\AgentIsActiveSpecification.cs" />
+    <Compile Include="PartialModels\bx_userinfo\bx_userinfo.cs" />
+    <Compile Include="PartialModels\bx_userinfo\IBxUserInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportModel\AagentGroupAuthen.cs" />
+    <Compile Include="ReportModel\AgentModel.cs" />
+    <Compile Include="ReportModel\AgentSonPremium.cs" />
+    <Compile Include="ReportModel\BaojiaMyListModel.cs" />
+    <Compile Include="ReportModel\CancelSubmitResult.cs" />
+    <Compile Include="ReportModel\CarOrderStatusModel.cs" />
+    <Compile Include="ReportModel\CreateOrderReturnModel.cs" />
+    <Compile Include="ReportModel\GSCClaimsListInfo.cs" />
+    <Compile Include="ReportModel\GSCHistoryContractInfo.cs" />
+    <Compile Include="ReportModel\InsuranceEndDate.cs" />
+    <Compile Include="ReportModel\InsuranceStartDate.cs" />
+    <Compile Include="ReportModel\PersonInfoModel.cs" />
+    <Compile Include="ReportModel\TableMessage.cs" />
+    <Compile Include="ReportModel\UserInfoModel.cs" />
+    <Compile Include="ReportModel\UserInfoQuote.cs" />
+    <Compile Include="ReportModel\UserInfoRepeatModel.cs" />
+    <Compile Include="ReportModel\WaBaseResponse.cs" />
+    <Compile Include="ReportModel\WaGuoShouCaiQuoteResponse.cs" />
+    <Compile Include="ReportModel\WaGuoShouCaiQuoteResult.cs" />
+    <Compile Include="Specification\AndSpecification.cs" />
+    <Compile Include="Specification\CompositeSpecification.cs" />
+    <Compile Include="Specification\ISpecification.cs" />
+    <Compile Include="Specification\NotSpecification.cs" />
+    <Compile Include="tx_agent.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_cluedistributerulesetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_cluefollowuprecord.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_clueinsureinfo.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_clues.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_clues_agent_relationship.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_clue_image.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_loss_reason.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_mobileservicestatus.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_mobile_agent_relationship.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_noticemessage.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_operation_log.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_overnoticesetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_receivesdistributerulesetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_settlement_detail.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_sms.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_smstemplatesetting.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_state.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tx_storeaddress.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <DependentUpon>BiHuManBu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AccidentClueModel.cs" />
+    <Compile Include="ViewModels\AccidentClueTotalModel.cs" />
+    <Compile Include="ViewModels\AccidentOpenCityVM.cs" />
+    <Compile Include="ViewModels\AccidentVersionModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\QuoeDetailViewModel.cs" />
+    <Compile Include="ViewModels\CameraViewModel.cs" />
+    <Compile Include="ViewModels\ClaimOrderModel.cs" />
+    <Compile Include="ViewModels\CustomerAnalysisViewModel.cs" />
+    <Compile Include="ViewModels\EntryOverViewModel.cs" />
+    <Compile Include="ViewModels\FindByTnoQueueInfoViewModel.cs" />
+    <Compile Include="ViewModels\Order\ThirdModel\PostOrderDetailModel.cs" />
+    <Compile Include="ViewModels\Order\ThirdModel\ThirdOrderCarInfo.cs" />
+    <Compile Include="ViewModels\Order\ThirdModel\ThirdOrderDetail.cs" />
+    <Compile Include="ViewModels\Order\ThirdModel\ThirdPaymentResult.cs" />
+    <Compile Include="ViewModels\Order\ThirdModel\ThirdPrecisePrice.cs" />
+    <Compile Include="ViewModels\Order\ThirdModel\ThirdRelatedInfo.cs" />
+    <Compile Include="ViewModels\PremiumStatisticsVM.cs" />
+    <Compile Include="ViewModels\Request\AccidentBaseRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentBindPhoneRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentClueFollowUpRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentMoblieServiceStateRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentSendMessageRequest.cs" />
+    <Compile Include="ViewModels\AccidentSMSTempModel.cs" />
+    <Compile Include="ViewModels\Request\AccidentSettlementRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentSignOutRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentSMSRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentSmsTemplateRequest.cs" />
+    <Compile Include="ViewModels\Request\EntryOverViewRequest.cs" />
+    <Compile Include="ViewModels\Request\GetClusDetailsRequest.cs" />
+    <Compile Include="ViewModels\Request\OrderDeliveryInfoRequest.cs" />
+    <Compile Include="ViewModels\Request\SfAgentRequest.cs" />
+    <Compile Include="ViewModels\Request\ShortMsgSettingRequest.cs" />
+    <Compile Include="ViewModels\Request\StoreAddressRquest.cs" />
+    <Compile Include="ViewModels\Request\StoreRequest.cs" />
+    <Compile Include="ViewModels\Request\TXBaseRequest.cs" />
+    <Compile Include="ViewModels\Response\AccidentClueStatesResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentFollowRecordResponse.cs" />
+    <Compile Include="ViewModels\AccidentLoginModel.cs" />
+    <Compile Include="ViewModels\AccidentNoticeMessageModel.cs" />
+    <Compile Include="ViewModels\AddToSettlementListRequestVM.cs" />
+    <Compile Include="ViewModels\AddWithdrawalViewModel.cs" />
+    <Compile Include="ViewModels\AgentCategoryTaskCountVM.cs" />
+    <Compile Include="ViewModels\AgentGroupVM.cs" />
+    <Compile Include="ViewModels\AgentUKeyViewModel.cs" />
+    <Compile Include="ViewModels\AppoinmentViewModel.cs" />
+    <Compile Include="ViewModels\AppointmentOrderViewModel.cs" />
+    <Compile Include="ViewModels\AppointmentViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AddConsumerReviewViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\BxConfigViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CarVehicleInfoNewViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CheckCarVehicleInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\DefeatReasonViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetAgentTagViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetConsumerInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetCrmStepsListViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\IsHaveLicensenoViewModel.cs" />
+    <Compile Include="ViewModels\BankListViewModel.cs" />
+    <Compile Include="ViewModels\BaseRequestViewModel.cs" />
+    <Compile Include="ViewModels\BatchBackViewModel.cs" />
+    <Compile Include="ViewModels\BatchRefreshRenewalViewModel.cs" />
+    <Compile Include="ViewModels\BatchUpdateCustomerCategoriesModel.cs" />
+    <Compile Include="ViewModels\BatchUpdateCustomerStatusModel.cs" />
+    <Compile Include="ViewModels\BihuBusinessSystem\Class1ViewModel.cs" />
+    <Compile Include="ViewModels\BulkSendSms_QuartzJob.cs" />
+    <Compile Include="ViewModels\BusiuserViewModel.cs" />
+    <Compile Include="ViewModels\CameraBlackViewModel.cs" />
+    <Compile Include="ViewModels\CarDealerReportVM.cs" />
+    <Compile Include="ViewModels\CarRenewalStatisticsDetailTable.cs" />
+    <Compile Include="ViewModels\CategoryTaskCountVm.cs" />
+    <Compile Include="ViewModels\CheckAgentStatusViewModel.cs" />
+    <Compile Include="ViewModels\CheckedResult_QuartzJob.cs" />
+    <Compile Include="ViewModels\CheckRefreshRenewalViewModel.cs" />
+    <Compile Include="ViewModels\CitySourceViewModel.cs" />
+    <Compile Include="ViewModels\CodeValidationViewModel.cs" />
+    <Compile Include="ViewModels\BulkSmsSendViewModel.cs" />
+    <Compile Include="ViewModels\CorrectCarViewModel.cs" />
+    <Compile Include="ViewModels\CorrectRepeatViewModel.cs" />
+    <Compile Include="ViewModels\CreateSettlementVM.cs" />
+    <Compile Include="ViewModels\CustomerCategoriesModel.cs" />
+    <Compile Include="ViewModels\CusListViewModel.cs" />
+    <Compile Include="ViewModels\CustomerStatusViewModel.cs" />
+    <Compile Include="ViewModels\DailyWorkViewModel.cs" />
+    <Compile Include="ViewModels\DefeatAnalyticsViewModel.cs" />
+    <Compile Include="ViewModels\DistributeBackViewModel.cs" />
+    <Compile Include="ViewModels\DistributeTimeTagViewModel.cs" />
+    <Compile Include="ViewModels\EntryDetailsViewModel.cs" />
+    <Compile Include="ViewModels\EntryFollowUpAnalysisVM.cs" />
+    <Compile Include="ViewModels\EntryPeriodAnalysisVM.cs" />
+    <Compile Include="ViewModels\EntryProportionAnalysisVM.cs" />
+    <Compile Include="ViewModels\FlowDirectionAnalysisVM.cs" />
+    <Compile Include="ViewModels\FlowMonitorVM.cs" />
+    <Compile Include="ViewModels\FollowUpAllocationResultAboutAgentVm.cs" />
+    <Compile Include="ViewModels\FollowUpAllocationVM.cs" />
+    <Compile Include="ViewModels\GetAgentRateViewModel.cs" />
+    <Compile Include="ViewModels\GetRoleListViewModel.cs" />
+    <Compile Include="ViewModels\GroupAuthenViewModel.cs" />
+    <Compile Include="ViewModels\InsureAdvanceAnalysisVM.cs" />
+    <Compile Include="ViewModels\InsureBizAvgAnalysisVM.cs" />
+    <Compile Include="ViewModels\InsureDistributionAnalysisTempVM.cs" />
+    <Compile Include="ViewModels\InsureDistributionAnalysisVM.cs" />
+    <Compile Include="ViewModels\InsureRiskAnalysisVM.cs" />
+    <Compile Include="ViewModels\IsHaveLicensenoToQuoteViewModel.cs" />
+    <Compile Include="ViewModels\JobNumberListViewModel.cs" />
+    <Compile Include="ViewModels\LineUpRenewalViewModel.cs" />
+    <Compile Include="ViewModels\ListCommissionsWithdrawalViewModel.cs" />
+    <Compile Include="ViewModels\ListWithdrawalViewModel.cs" />
+    <Compile Include="ViewModels\ManagerModuleViewModel.cs" />
+    <Compile Include="ViewModels\GetSonAgentsViewModel.cs" />
+    <Compile Include="ViewModels\ManageruserViewModel.cs" />
+    <Compile Include="ViewModels\MobileDefeatAnalyticsVM.cs" />
+    <Compile Include="ViewModels\MobileStatisticsBaseVM.cs" />
+    <Compile Include="ViewModels\NameValue.cs" />
+    <Compile Include="ViewModels\NextLevelAgentListViewModel.cs" />
+    <Compile Include="ViewModels\OrderAgentAmountViewModel.cs" />
+    <Compile Include="ViewModels\OrderInformationViewModel.cs" />
+    <Compile Include="ViewModels\Order\BaseOrderDetail.cs" />
+    <Compile Include="ViewModels\Order\CommissionIntegralViewModel.cs" />
+    <Compile Include="ViewModels\Order\CreateOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\Order\GetOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\Order\IsValidOrderViewModel.cs" />
+    <Compile Include="ViewModels\Order\FindByTnoQueueInfoResponse.cs" />
+    <Compile Include="ViewModels\Order\UpdateOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\Order\UpdateOrderStatusViewModel.cs" />
+    <Compile Include="ViewModels\OrgListViewModel.cs" />
+    <Compile Include="ViewModels\OutOrderOrDefeatAllocationResultAboutAgentVMTemp.cs" />
+    <Compile Include="ViewModels\OutOrderOrDefeatAllocationVM.cs" />
+    <Compile Include="ViewModels\OutOrderStatisticsResultAboutAgentVM.cs" />
+    <Compile Include="ViewModels\OutOrderStatisticsVM.cs" />
+    <Compile Include="ViewModels\OverviewOfDataViewModel.cs" />
+    <Compile Include="ViewModels\Request\AccidentJGRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentStatisticsRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentTotalRequest.cs" />
+    <Compile Include="ViewModels\Request\GetFollowReportRequest.cs" />
+    <Compile Include="ViewModels\Request\PhoneSettingRequest.cs" />
+    <Compile Include="ViewModels\PreferentialActivityViewModel.cs" />
+    <Compile Include="ViewModels\QueryAgentViewModel.cs" />
+    <Compile Include="ViewModels\QuotationReceiptViewModel.cs" />
+    <Compile Include="ViewModels\QuoteActionAnalysisVM.cs" />
+    <Compile Include="ViewModels\QuoteTimesAnalysisTempVM.cs" />
+    <Compile Include="ViewModels\QuoteTimesAnalysisVM.cs" />
+    <Compile Include="ViewModels\RecordListViewModel.cs" />
+    <Compile Include="ViewModels\RenewalInformationViewModel.cs" />
+    <Compile Include="ViewModels\RepairStatus_QuartzJob.cs" />
+    <Compile Include="ViewModels\Request\AccidentClueRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentLoginRequest.cs" />
+    <Compile Include="ViewModels\Request\AccidentMessageRequest.cs" />
+    <Compile Include="ViewModels\Request\AddConsumerPayResultRequest.cs" />
+    <Compile Include="ViewModels\Request\AddEditModuleRequest.cs" />
+    <Compile Include="ViewModels\Request\AddOrUpdateRoleRequest.cs" />
+    <Compile Include="ViewModels\Request\AddAgentGroupViewModel.cs" />
+    <Compile Include="ViewModels\Request\AddPreferentialActivityRequest.cs" />
+    <Compile Include="ViewModels\Request\AddSmsBulkSendRecordRequest.cs" />
+    <Compile Include="ViewModels\Request\AddWithdrawalRequest.cs" />
+    <Compile Include="ViewModels\Request\AddZhenBangUserRequest.cs" />
+    <Compile Include="ViewModels\Request\AgentUKeyRequest.cs" />
+    <Compile Include="ViewModels\Request\BaseCustomerSearchRequest.cs" />
+    <Compile Include="ViewModels\Request\BaseOrderSearchRequest.cs" />
+    <Compile Include="ViewModels\Request\BaseRequest.cs" />
+    <Compile Include="ViewModels\Request\BaseRequest2.cs" />
+    <Compile Include="ViewModels\Request\BaseVerifyRequest.cs" />
+    <Compile Include="ViewModels\Request\BihuBusinessSystem\Class1Request.cs" />
+    <Compile Include="ViewModels\Request\BusiuserRequest.cs" />
+    <Compile Include="ViewModels\Request\CameraBlackRequest.cs" />
+    <Compile Include="ViewModels\Request\CameraHistoryRequest.cs" />
+    <Compile Include="ViewModels\Request\ConsumerDetailBehalfCrmViewModel.cs" />
+    <Compile Include="ViewModels\Request\CustomerRequest.cs" />
+    <Compile Include="ViewModels\Request\CreateSureOrderNewRequest.cs" />
+    <Compile Include="ViewModels\Request\DeleteAgentRequest.cs" />
+    <Compile Include="ViewModels\Request\DeleteOrderAgentRequest.cs" />
+    <Compile Include="ViewModels\Request\DistributeRuleSettingRequest.cs" />
+    <Compile Include="ViewModels\Request\EditAgentRateRequest.cs" />
+    <Compile Include="ViewModels\Request\EditAgentUsedRequest.cs" />
+    <Compile Include="ViewModels\Request\GetAgentRateRequest.cs" />
+    <Compile Include="ViewModels\Request\GetPreferentialActivityListRequest.cs" />
+    <Compile Include="ViewModels\Request\GetRenewalRequest.cs" />
+    <Compile Include="ViewModels\Request\GetSmsBulkSendRecordRequest.cs" />
+    <Compile Include="ViewModels\Request\GetTableHeaderRequest.cs" />
+    <Compile Include="ViewModels\Request\GetTargetUsersRequest.cs" />
+    <Compile Include="ViewModels\Request\GetTodayReviewCountRequest.cs" />
+    <Compile Include="ViewModels\Request\GetZuoXiRequest.cs" />
+    <Compile Include="ViewModels\Request\AddAgentRequest.cs" />
+    <Compile Include="ViewModels\Request\Interface\IPageRequest.cs" />
+    <Compile Include="ViewModels\Request\IsCanEditParentAgentRequest.cs" />
+    <Compile Include="ViewModels\Request\IsHaveLicensenoToQuoteRequest.cs" />
+    <Compile Include="ViewModels\Request\JobNumberRequest.cs" />
+    <Compile Include="ViewModels\Request\ManagerRoleRequest.cs" />
+    <Compile Include="ViewModels\Request\MoneyListRequest.cs" />
+    <Compile Include="ViewModels\Request\OrgListRequest.cs" />
+    <Compile Include="ViewModels\Request\OverNoticeSettingRequest.cs" />
+    <Compile Include="ViewModels\Request\PageListWithdrawalRequest.cs" />
+    <Compile Include="ViewModels\Request\PageRequest.cs" />
+    <Compile Include="ViewModels\Request\RatePolicySettingRequest.cs" />
+    <Compile Include="ViewModels\Request\ManageruserRequest.cs" />
+    <Compile Include="ViewModels\Request\PushMessageRequest.cs" />
+    <Compile Include="ViewModels\Request\QueryAgentRequest.cs" />
+    <Compile Include="ViewModels\Request\SaveOrgInfoRequest.cs" />
+    <Compile Include="ViewModels\Request\SavePayPeopleRequest.cs" />
+    <Compile Include="ViewModels\Request\SearchOrderRequest.cs" />
+    <Compile Include="ViewModels\Request\SetTableHeaderRequest.cs" />
+    <Compile Include="ViewModels\Request\SfMobileLoginRequest.cs" />
+    <Compile Include="ViewModels\Request\SmsTemplateRequest.cs" />
+    <Compile Include="ViewModels\Request\TotalIncomeRequest.cs" />
+    <Compile Include="ViewModels\Request\UkeyLoginRequest.cs" />
+    <Compile Include="ViewModels\Request\UpdateAgentGroupViewModel.cs" />
+    <Compile Include="ViewModels\Request\SendRequest.cs" />
+    <Compile Include="ViewModels\Request\UpdateAgentEffectiveCallDurationRequest.cs" />
+    <Compile Include="ViewModels\Request\UpdateGroupAuthenRequest.cs" />
+    <Compile Include="ViewModels\Request\UpdateCustomerRequest.cs" />
+    <Compile Include="ViewModels\Request\UpdateSmsBulkSendRecordRequest.cs" />
+    <Compile Include="ViewModels\Request\UserExpandRequest.cs" />
+    <Compile Include="ViewModels\Request\ValidateRegistRequest.cs" />
+    <Compile Include="ViewModels\Request\WithdrawalAuditRequset.cs" />
+    <Compile Include="ViewModels\Request\ZBUpdateUserRequest.cs" />
+    <Compile Include="ViewModels\Response\AccidentClueTotalResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentJGResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentMessageResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentMoblieServiceResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentResponse.cs" />
+    <Compile Include="ViewModels\ClueStatisticalViewModel.cs" />
+    <Compile Include="ViewModels\Response\AccidentSignOutResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentSmsSendResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentSmsTempResponse.cs" />
+    <Compile Include="ViewModels\Response\AccidentStatisticsResponse.cs" />
+    <Compile Include="ViewModels\Response\ClaimStoreResponse.cs" />
+    <Compile Include="ViewModels\Response\CompareVersionResponse.cs" />
+    <Compile Include="ViewModels\Response\CreateSureOrderNewResponse.cs" />
+    <Compile Include="ViewModels\Response\ForeignViewModel.cs" />
+    <Compile Include="ViewModels\Response\CustomerInfoesVM.cs" />
+    <Compile Include="ViewModels\Response\GetBusiuserViewModel.cs" />
+    <Compile Include="ViewModels\Response\GetCountLoopViewModel.cs" />
+    <Compile Include="ViewModels\Response\GetRenewalInfoViewModel.cs" />
+    <Compile Include="ViewModels\Response\GetTableHeaderViewModel.cs" />
+    <Compile Include="ViewModels\Response\GetTodayReviewCountViewModel.cs" />
+    <Compile Include="ViewModels\Response\IsOrderAgentViewModel.cs" />
+    <Compile Include="ViewModels\Response\MoneyListViewModel.cs" />
+    <Compile Include="ViewModels\Response\OrderDeliveryInfoResponse.cs" />
+    <Compile Include="ViewModels\Response\ShortMsgSettingResponse.cs" />
+    <Compile Include="ViewModels\Response\TXBaseResponse.cs" />
+    <Compile Include="ViewModels\Response\TXGetReInfoResponse.cs" />
+    <Compile Include="ViewModels\Result\BulkSendResult.cs" />
+    <Compile Include="ViewModels\Result\GetAgentViewModel.cs" />
+    <Compile Include="ViewModels\Result\GetOrderAgentViewModel.cs" />
+    <Compile Include="ViewModels\Result\GetZuoXiViewModel.cs" />
+    <Compile Include="ViewModels\Result\AddAgentViewModel.cs" />
+    <Compile Include="ViewModels\Result\ManagerRoleRequest.cs" />
+    <Compile Include="ViewModels\Result\SearchOrderViewModel.cs" />
+    <Compile Include="ViewModels\Result\SendMobilesAndContentResult.cs" />
+    <Compile Include="ViewModels\Result\SmsBulkSendRecordViewModel.cs" />
+    <Compile Include="ViewModels\Result\TargetUsersMobileResult.cs" />
+    <Compile Include="ViewModels\RollBackSettlementListRequestVM.cs" />
+    <Compile Include="ViewModels\SalesmanStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\SaveCustomerInfoViewModel.cs" />
+    <Compile Include="ViewModels\SaveRecordViewModel.cs" />
+    <Compile Include="ViewModels\SearchRecordAnalyticsDataWhereViewModel.cs" />
+    <Compile Include="ViewModels\SearchtRecordListWhereViewModel.cs" />
+    <Compile Include="ViewModels\SendMessageViewModel.cs" />
+    <Compile Include="ViewModels\SendSmsModel.cs" />
+    <Compile Include="ViewModels\SettlementListSearchRequestVM.cs" />
+    <Compile Include="ViewModels\SettlementResponseVM.cs" />
+    <Compile Include="ViewModels\SettlementUpdateStatusVM.cs" />
+    <Compile Include="ViewModels\SettlementViewModel.cs" />
+    <Compile Include="ViewModels\SfAgentViewModel.cs" />
+    <Compile Include="ViewModels\SfH5AverageViewModel.cs" />
+    <Compile Include="ViewModels\SfH5ViewModel.cs" />
+    <Compile Include="ViewModels\SfMobileLoginViewModel.cs" />
+    <Compile Include="ViewModels\SingleAgentDataViewModel.cs" />
+    <Compile Include="ViewModels\StatisticsCellDetail.cs" />
+    <Compile Include="ViewModels\TeamChildLevelListViewModel.cs" />
+    <Compile Include="ViewModels\TeamLevelViewModel.cs" />
+    <Compile Include="ViewModels\TeamListViewModel.cs" />
+    <Compile Include="ViewModels\TimePassAnalysisViewModel.cs" />
+    <Compile Include="ViewModels\TrendMapViewModel.cs" />
+    <Compile Include="ViewModels\BusinessStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\DefeatReasonDataViewModel.cs" />
+    <Compile Include="ViewModels\DefeatReasonSettingViewModel.cs" />
+    <Compile Include="ViewModels\AgentDistributedViewModel.cs" />
+    <Compile Include="ViewModels\AgentIdentityAndRateViewModel.cs" />
+    <Compile Include="ViewModels\AgentIdParentIdTopIdViewModel.cs" />
+    <Compile Include="ViewModels\AgentNameViewModel.cs" />
+    <Compile Include="ViewModels\AgentSourceViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AddOrUpdateWorkOrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AddOrUpdateWorkOrderViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AddressViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AgentIdentityAndRateViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AgentPointViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AgentProtoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AgentRateViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AgentSourceViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AgentViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AppBaseViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\AreaInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\BaojiaInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\BaojiaItemViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\BaojiaMyListViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\BaoxianXianZhongViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CarChargeViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CarOrderModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CarVehicleDetail.cs" />
+    <Compile Include="ViewModels\AppViewModels\CarVehicleItem.cs" />
+    <Compile Include="ViewModels\AppViewModels\CityViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CreateAddressViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\CreateOrderViewMode.cs" />
+    <Compile Include="ViewModels\AppViewModels\DepreciationPriceViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\DuoToNoticeViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\EnumSmsBusinessType.cs" />
+    <Compile Include="ViewModels\AppViewModels\EnumSource.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetCountsViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetCreaditInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetPrecisePriceOfUserInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetPrecisePriceViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetReInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\GetSettedAgentViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\ICarVehicleItem.cs" />
+    <Compile Include="ViewModels\AppViewModels\LicenseInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\LicenseViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\MessageHistoryViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\MessageListViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\MyListViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\OrderDetailViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\OrderViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\PrecisePriceItemViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\QuoteResultCarInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\ReportClaimHistoryViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\ReVisitedListViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\SaveQuoteViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\SharePrecisePriceViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\SmsAccountViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\SmsOrderViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\SubmitInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\TempRelationViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\UsableSmsCountViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\UserClaimViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\UserInfoViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\WorkOrderDetailListViewModel.cs" />
+    <Compile Include="ViewModels\AppViewModels\XianZhongUnit.cs" />
+    <Compile Include="ViewModels\BackUpdateBatchRenewalItem.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BxMessageViewModel.cs" />
+    <Compile Include="ViewModels\BxUserinfoViewModel.cs" />
+    <Compile Include="ViewModels\CBusinessDistributeViewModel.cs" />
+    <Compile Include="ViewModels\CarMoldResultModel.cs" />
+    <Compile Include="ViewModels\ConsumerReviewToJson.cs" />
+    <Compile Include="ViewModels\CqaLoginResultModel.cs" />
+    <Compile Include="ViewModels\CrmTimeLineForSmsViewModel.cs" />
+    <Compile Include="ViewModels\CTopLevelAgentViewModel.cs" />
+    <Compile Include="ViewModels\CustomerBusinessCarInfoViewModel.cs" />
+    <Compile Include="ViewModels\CustomerListExportViewModel.cs" />
+    <Compile Include="ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="ViewModels\dateupdate.cs" />
+    <Compile Include="ViewModels\DistributedCountViewModel.cs" />
+    <Compile Include="ViewModels\DistributedDataVM.cs" />
+    <Compile Include="ViewModels\DueToNoticeDataViewModel.cs" />
+    <Compile Include="ViewModels\EnumCrmTimeLineType.cs" />
+    <Compile Include="ViewModels\EnumCustomerStatus.cs" />
+    <Compile Include="ViewModels\EnumRenewalType.cs" />
+    <Compile Include="ViewModels\EnumSource.cs" />
+    <Compile Include="ViewModels\Enum\EnumSmsBusinessType.cs" />
+    <Compile Include="ViewModels\GetAgentAddViewModel.cs" />
+    <Compile Include="ViewModels\GetAgentChildrenListViewMode.cs" />
+    <Compile Include="ViewModels\GetAgentTokenViewModel.cs" />
+    <Compile Include="ViewModels\GetAgentViewModel.cs" />
+    <Compile Include="ViewModels\GetCountViewModel.cs" />
+    <Compile Include="ViewModels\GetCustomerCarInfo.cs" />
+    <Compile Include="ViewModels\GetCustomerViewModel.cs" />
+    <Compile Include="ViewModels\GetLoginViewModel.cs" />
+    <Compile Include="ViewModels\GetQuoteHistoryViewModel.cs" />
+    <Compile Include="ViewModels\GetQuoteStatusViewModel.cs" />
+    <Compile Include="ViewModels\GetSentSmsViewModel.cs" />
+    <Compile Include="ViewModels\HebaoRateViewModel.cs" />
+    <Compile Include="ViewModels\InitRedisData\RedisAgentDataViewModel.cs" />
+    <Compile Include="ViewModels\IsNewCarViewModel.cs" />
+    <Compile Include="ViewModels\LabelCountViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\LoopRenewalViewModel.cs" />
+    <Compile Include="ViewModels\ManagerRoleViewModel.cs" />
+    <Compile Include="ViewModels\Message\LastDayReInfoTotalViewModel.cs" />
+    <Compile Include="ViewModels\Message\MessageListViewModel.cs" />
+    <Compile Include="ViewModels\Message\MsgClosedOrderViewModel.cs" />
+    <Compile Include="ViewModels\Message\MsgCountViewModel.cs" />
+    <Compile Include="ViewModels\Message\MsgInfoViewModel.cs" />
+    <Compile Include="ViewModels\ObjectAgentViewModel.cs" />
+    <Compile Include="ViewModels\PushedMessage.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\RenewalInfoViewModel.cs" />
+    <Compile Include="ViewModels\Request\ForbidCallRequest.cs" />
+    <Compile Include="ViewModels\Request\IsHaveLicensenoRequest.cs" />
+    <Compile Include="ViewModels\Request\WChat\AddWChatLicenseNoOpenIdRelationRequest.cs" />
+    <Compile Include="ViewModels\Request\WChat\GetOpenIdByLicensenoRequest.cs" />
+    <Compile Include="ViewModels\Result\ForbidCallresult.cs" />
+    <Compile Include="ViewModels\Result\AegntDredgeCityResult.cs" />
+    <Compile Include="ViewModels\Request\AgentDredgeCityRequest.cs" />
+    <Compile Include="ViewModels\Request\CameraRequest.cs" />
+    <Compile Include="ViewModels\Request\ConsumerDetailCrmTlViewModel.cs" />
+    <Compile Include="ViewModels\Request\ConsumerDetailSmsViewModel.cs" />
+    <Compile Include="ViewModels\Request\CreateWCahtAgentAccountRequest.cs" />
+    <Compile Include="ViewModels\Request\GetTopAgentInfoRequest.cs" />
+    <Compile Include="ViewModels\Request\GetUserInfoByShareCodeRequest.cs" />
+    <Compile Include="ViewModels\Request\IsExistMobileRequest.cs" />
+    <Compile Include="ViewModels\Result\CreateWCahtAgentAccountResult.cs" />
+    <Compile Include="ViewModels\Result\GetUserInfoByShareCodeResult.cs" />
+    <Compile Include="ViewModels\Result\IsHaveLicenseNoResult.cs" />
+    <Compile Include="ViewModels\Result\IsUpdateAccountResult.cs" />
+    <Compile Include="ViewModels\Request\IsUpdateAccountResquest.cs" />
+    <Compile Include="ViewModels\Request\RequestNewQuoteInfoViewModel.cs" />
+    <Compile Include="ViewModels\ResultBaseViewModel.cs" />
+    <Compile Include="ViewModels\Result\AppoinmentInfoNumResultViewModel.cs" />
+    <Compile Include="ViewModels\Result\BxUserinfoRenewalViewModel.cs" />
+    <Compile Include="ViewModels\Result\ConsumerDetailCrmTlListViewModel.cs" />
+    <Compile Include="ViewModels\Result\GetDistributeForAgentViewModel.cs" />
+    <Compile Include="ViewModels\Result\GetTopAgentInfoResult.cs" />
+    <Compile Include="ViewModels\Result\NewQuoteInfoViewModel.cs" />
+    <Compile Include="ViewModels\Result\SmsResultModel.cs" />
+    <Compile Include="ViewModels\Result\WChat\GetOpenIdByLicensenoResult.cs" />
+    <Compile Include="ViewModels\SaveTransferRecord.cs" />
+    <Compile Include="ViewModels\SeachDefeatReasonHistoryCondition.cs" />
+    <Compile Include="ViewModels\SealmanViewModel.cs" />
+    <Compile Include="ViewModels\SingleDefeatReasonDataViewModel.cs" />
+    <Compile Include="ViewModels\SmsResultViewModel.cs" />
+    <Compile Include="ViewModels\SmsSendViewModel.cs" />
+    <Compile Include="ViewModels\Sms\SmsAccountViewModel.cs" />
+    <Compile Include="ViewModels\Sms\SmsOrderViewModel.cs" />
+    <Compile Include="ViewModels\Sms\SmsResultViewModel_sms.cs" />
+    <Compile Include="ViewModels\TempInsuredViewModel.cs" />
+    <Compile Include="ViewModels\TempUserViewModel.cs" />
+    <Compile Include="ViewModels\TXPushPeople.cs" />
+    <Compile Include="ViewModels\UnSettlementListSearchRequestVM.cs" />
+    <Compile Include="ViewModels\UnSettlementRequestVM.cs" />
+    <Compile Include="ViewModels\UnSettlementResponseVM.cs" />
+    <Compile Include="ViewModels\UpdateBatchRenewalItemModel.cs" />
+    <Compile Include="ViewModels\UpdateBatchRenewal_QuartzJob.cs" />
+    <Compile Include="ViewModels\UpdateRecordViewModel.cs" />
+    <Compile Include="ViewModels\UpdateUserInfoModel.cs" />
+    <Compile Include="ViewModels\UserInfoRepeatViewModel.cs" />
+    <Compile Include="ViewModels\UserInfoStatusViewModel.cs" />
+    <Compile Include="ViewModels\UserInfoViewModel.cs" />
+    <Compile Include="ViewModels\ValidationViewModel.cs" />
+    <Compile Include="ViewModels\VMProject\GroupListViewModel.cs" />
+    <Compile Include="ViewModels\WithdrawalDetailViewModel.cs" />
+    <Compile Include="ViewModels\WorkStatistics_FollowUpStatisticsResultAboutAgentVM.cs" />
+    <Compile Include="ViewModels\WorkStatistics_FollowUpVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="BiHuManBu.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BiHuManBu.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BiHuManBu.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BiHuManBu.edmx</DependentUpon>
+      <LastGenOutput>BiHuManBu.Context.cs</LastGenOutput>
+    </None>
+    <None Include="BiHuManBu.edmx.diagram">
+      <DependentUpon>BiHuManBu.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BiHuManBu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BiHuManBu.edmx</DependentUpon>
+      <LastGenOutput>BiHuManBu.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PartialModels\bx_userinfo\Specification\" />
+    <Folder Include="ViewModels\Request\App\" />
+    <Folder Include="ViewModels\Request\Pc\" />
+    <Folder Include="ViewModels\Result\App\" />
+    <Folder Include="ViewModels\Result\Pc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BiHuManBu.ExternalInterfaces.Infrastructure\BiHuManBu.EnterpriseInterfaces.Infrastructure.csproj">
+      <Project>{8218E846-F22C-4318-9FAA-838EDE8CC58C}</Project>
+      <Name>BiHuManBu.EnterpriseInterfaces.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+
+    <job>
+      <name>CarRenewalStatisticsServiceJob</name>
+      <group>CarRenewalStatisticsService</group>
+      <description>CarRenewalStatisticsServiceJob job for Quartz Server</description>
+      <job-type>CarRenewalStatisticsService.Jobs.CarRenewalStatisticsJob, CarRenewalStatisticsService</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    
+    <trigger>
+      <cron>
+        <name>CarRenewalStatisticsServiceJobTrigger</name>
+        <group>CarRenewalStatisticsService</group>
+        <job-name>CarRenewalStatisticsServiceJob</job-name>
+        <job-group>CarRenewalStatisticsService</job-group>
+        <start-time>2016-04-01T10:30:00+08:00</start-time>
+        <!--每天凌晨4点执行一次-->
+        <cron-expression>0 */30 * * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

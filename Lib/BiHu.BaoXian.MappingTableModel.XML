@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BiHu.BaoXian.MappingTableModel</name>
+    </assembly>
+    <members>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ResponseModel.Channels">
+            <summary>
+            第一层source
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ResponseModel.IsAllSelf">
+            <summary>
+            -1表示没有配置或配置错误
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ResponseModel.Msg">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ResponseModel.Unique">
+            <summary>
+            唯一标识,用于释放渠道
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.BaseRequestModel.CountType">
+            <summary>
+            有的请求需要额外计数,用以控制一分钟此类请求最多几次
+            与配置/表中的ExcuteTimesByCountType结合使用
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByChannelId.ExcuteType">
+            <summary>
+            请求种类,1不一定是自己的 2自己的
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByTopAgentId.SelectSource">
+            <summary>
+            每家保险公司选取几条
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByTopAgentId.SelectSourceVersionType">
+            <summary>
+            如果要指定版本类型
+            某保司source,该保司版本类型不能选
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByTopAgentId.IsDifferenceCity">
+            <summary>
+            是否区别城市,与区别城市的保险公司类型同等级别
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByTopAgentId.ExcuteType">
+            <summary>
+            请求种类,1不一定是自己的 2自己的
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByCityId.SelectSource">
+            <summary>
+            每家保险公司选取几条
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByCityId.SelectSourceVersionType">
+            <summary>
+            如果要指定版本类型
+            某保司source,该保司版本类型不能选
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByCityId.IsDifferenceCity">
+            <summary>
+            是否区别城市,与区别城市的保险公司类型同等级别
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.Request.RequestByUkeyId.ExcuteType">
+            <summary>
+            请求种类,1不一定是自己的 2自己的
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.RequestModel.SelectSource">
+            <summary>
+            每家保险公司选取几条
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.RequestModel.SelectSourceVersionType">
+            <summary>
+            如果要指定版本类型
+            某保司source,该保司版本类型不能选
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.RequestModel.ExcuteType">
+            <summary>
+            请求种类,1不一定是自己的 2自己的
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.RequestModel.IsDifferenceCity">
+            <summary>
+            是否区别城市,与区别城市的保险公司类型同等级别
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.CityId">
+            <summary>
+            source在外层
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.IsUrl">
+            <summary>
+            1为url 2为macurl
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.Url">
+            <summary>
+            url请求地址,网站需要
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.MacUrl">
+            <summary>
+            mac请求地址,服务需要
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.IsUse">
+            <summary>
+            当前渠道是否可用
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.IsSelf">
+            <summary>
+            是否是通过走自己选出的渠道
+            0调度 1自己
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.ConfigId">
+            <summary>
+            configid
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.NetType">
+            <summary>
+            网络类型
+            0联通 1电信 2其它
+            </summary>
+        </member>
+        <member name="P:BiHu.BaoXian.MappingTableModel.ChannelModel.IsPaicApi">
+            <summary>
+            是否平安接口
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.MappingTableModel.SocketCommon.#cctor">
+            <summary>
+            考虑到微服务集群数量众多并有加锁执行的特点,每个服务只一个调度连接
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.MappingTableModel.SocketCommon.GetChannels(BiHu.BaoXian.MappingTableModel.BaseRequestModel,System.Int32)">
+            <summary>
+            请求获取渠道(超时时间:秒)
+            </summary>
+        </member>
+        <member name="M:BiHu.BaoXian.MappingTableModel.SocketCommon.FreeChannels(BiHu.BaoXian.MappingTableModel.ResponseModel,System.Int32)">
+            <summary>
+            请求释放渠道(超时时间:秒)
+            </summary>
+        </member>
+    </members>
+</doc>

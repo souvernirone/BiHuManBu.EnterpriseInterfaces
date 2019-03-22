@@ -1,0 +1,2 @@
+D:\BiHuWalking\BiHuManBu.EnterpriseInterfaces\ConsumerReviewRemind\bin\Debug\ConsumerReviewRemind.exe install
+pause
